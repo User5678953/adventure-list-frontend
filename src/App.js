@@ -1,5 +1,6 @@
-
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 
 function App() {
@@ -7,8 +8,7 @@ function App() {
     <div className="App">
       <header >
         <Navbar />
-               
-        <h1>THIS IS APP.JS</h1>
+        <Home />
         
       </header>
     </div>
