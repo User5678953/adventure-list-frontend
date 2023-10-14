@@ -13,7 +13,7 @@ const Home = () => {
             </Routes>
             <h1>Home Page</h1>
             <div className="publicPhotos">
-                <img src="https://petapixel.com/assets/uploads/2022/08/fdfs19-800x533.jpg" alt="Landscape picture" />
+                <img src="https://petapixel.com/assets/uploads/2022/08/fdfs19-800x533.jpg" alt="Random landscape" />
             </div>
             <MapBoard />
         </div>
