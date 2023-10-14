@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Login from './Login'
 import MapBoard from '../components/MapBoard'
@@ -27,8 +28,21 @@ const randPic = [
     }
 ] 
 
-
 const Home = () => {
+    const [randomImage, setRandomImage] = useState(Math.floor(Math.random() * randPic.length))
+
+    useEffect(() => {
+        const intervalID = setInterval(() => {
+            if (randomImage === randPic.length - 1) {
+                setRandomImage(0)
+            } else {
+                setRandomImage(randomImage + 1)
+            }
+        }, 5000)
+
+        return () => clearInterval(intervalID)
+    }, [randomImage])
+
     return (
         <div>
             <Routes>
@@ -38,7 +52,7 @@ const Home = () => {
             </Routes>
             <h1>Home Page</h1>
             <div className="publicPhotos">
-                <img src={randPic[0].src} alt={randPic[0].alt} />
+                <img src={randPic[randomImage].src} alt={randPic[randomImage].alt} />
             </div>
             <MapBoard />
         </div>
