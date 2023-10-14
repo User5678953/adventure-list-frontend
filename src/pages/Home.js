@@ -12,7 +12,6 @@ const Home = () => {
                     <Login /> 
                 } />       
             </Routes>
-            {/* <h1>Home Page</h1> */}
             <PhotosDiv />
             <MapBoard />
         </div>

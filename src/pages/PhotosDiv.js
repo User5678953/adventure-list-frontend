@@ -43,7 +43,6 @@ const PhotosDiv = () => {
 
     return (
         <div className='photosDiv'>
-            {/* <h1>PhotosDiv Page</h1> */}
             <div className="publicPhotos">
                 <img src={randPic[randomImage].src} alt={randPic[randomImage].alt} />
             </div>
