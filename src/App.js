@@ -1,10 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
-<<<<<<< Updated upstream
-import Home from './pages/Home';
-=======
-import Login from "./pages/Login";
->>>>>>> Stashed changes
+import Home from './pages/Home'
+  import PhotosManagement from "./pages/PhotosManagement";
 
 
 function App() {
@@ -12,14 +9,8 @@ function App() {
     <div className="App">
       <header>
         <Navbar />
-<<<<<<< Updated upstream
         <Home />
         
-=======
-
-        <h1>THIS IS APP.JS</h1>
-        <Route path="/login" component={Login} />
->>>>>>> Stashed changes
       </header>
     </div>
   );
