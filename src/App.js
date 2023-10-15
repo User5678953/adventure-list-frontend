@@ -9,8 +9,13 @@ function App() {
     <div className="App">
       <header>
         <Navbar />
-        <Home />
-        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/photos/PhotosManagement"
+            element={<PhotosManagement />}
+          />
+        </Routes>
       </header>
     </div>
   );
