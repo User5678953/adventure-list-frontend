@@ -12,7 +12,7 @@ const Home = () => {
                 <Route path='/register/login' element={
                     <>
                         <Modal />
-                        <Login /> 
+                        {/* <Login />  */}
                     </>
                 } />       
             </Routes>
