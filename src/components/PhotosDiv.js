@@ -3,24 +3,32 @@ import { useEffect, useState } from 'react'
 // Array of random pictures to test random image function
 const randPic = [
     {
-        src: 'https://www.rapturecamps.com/wp-content/uploads/2019/05/costa-rica-k%C3%BCste-t%C3%BCrkises-wasser-drohnenfoto.jpg',
-        alt: 'Costa Rica Landscape'
+        src: 'https://images.unsplash.com/photo-1599738139470-a29edf66a021?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2940',
+        alt: 'Spain Landscape'
     },
     {
-        src: 'https://media.digitalnomads.world/wp-content/uploads/2021/02/20120635/tokyo-for-digital-nomads.jpg',
-        alt: 'Tokyo Landscape'
+        src: 'https://images.unsplash.com/photo-1491488884926-6ab2ffc1c629?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2500',
+        alt: 'Iceland Landscape'
     },
     {
-        src: 'https://media.cntraveler.com/photos/63cad195484f5d86dc05cb34/16:9/w_2560%2Cc_limit/Red%2520Rock%2520Canyons%2520in%2520Zion_GettyImages-528284494.jpg',
-        alt: 'Zion National Park Landscape'
+        src: 'https://images.unsplash.com/photo-1642706629725-25b01ab2eabb?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2940',
+        alt: 'Netherlands Landscape'
     },
     {
-        src: 'https://a.storyblok.com/f/53624/1600x900/f51e74d1de/nzl-5c3f585ab8e7d29716.jpg',
-        alt: 'New Zealand Landscape'
+        src: 'https://images.unsplash.com/photo-1612179124106-8df97d6cafe1?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2938',
+        alt: 'Romania Landscape'
     },
     {
-        src: 'https://res.cloudinary.com/djcyhbk2e/image/upload/c_fit,f_auto,h_800,q_35,w_800/v1/gvv/prod/yp2b0ocwenuvu8jjv1zz',
-        alt: 'Norway Landscape'
+        src: 'https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2940',
+        alt: 'Japan Landscape'
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1490782300182-697b80ad4293?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=3027',
+        alt: 'Chile Landscape'
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1548296404-93c7694b2f91?auto=format&fit=crop&q=80&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=2940',
+        alt: 'Australia Landscape'
     }
 ] 
 
@@ -44,7 +52,7 @@ const PhotosDiv = () => {
     return (
         <div className='photosDiv'>
             <div className="publicPhotos">
-                <img src={randPic[randomImage].src} alt={randPic[randomImage].alt} />
+                <img className="photosDivImg" src={randPic[randomImage].src} alt={randPic[randomImage].alt} />
             </div>
         </div>
     )

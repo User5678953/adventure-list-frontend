@@ -5,6 +5,32 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.photosDiv {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.photosDivImg {
+    height: 100%;
+}
+
+.mapDiv {
+    height: 30vh;
+    margin: 10px;
+}
+
+.mapImg {
+    height: 100%;
+}
+
+
+
+//////////////////////////////
+/// MODAL STYLING
+//////////////////////////////
+
 .modalDiv {
     width: 100vw;
     height: 100vh;
