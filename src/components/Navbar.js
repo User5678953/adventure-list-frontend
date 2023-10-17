@@ -1,20 +1,15 @@
-import {Link, Route, Routes} from 'react-router-dom'
-import Login from '../pages/Login'
-
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
+
+    const location = useLocation()
+
     return (
         <nav className='navbar'>
-            {/* <Routes>
-                <Route path='/register/login' element={
-                    <Login />
-                } 
-
-                />
-            </Routes> */}
-            <Link to='/register/login'>
+            <Link to='/register/login' state={{background: location}}>
                 <div>Login</div>
             </Link>
+            {/* <Outlet /> */}
         </nav>
     )
 }
