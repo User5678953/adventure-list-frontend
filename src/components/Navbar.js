@@ -1,22 +1,35 @@
-import {Link, Route, Routes} from 'react-router-dom'
-import Login from '../pages/Login'
+<<<<<<< Updated upstream
+import { Link, Outlet, useLocation } from 'react-router-dom'
+=======
+import {Link} from 'react-router-dom'
 
+
+>>>>>>> Stashed changes
 
 const Navbar = () => {
-    return (
-        <nav className='navbar'>
-            {/* <Routes>
-                <Route path='/register/login' element={
-                    <Login />
-                } 
 
-                />
-            </Routes> */}
-            <Link to='/register/login'>
+    const location = useLocation()
+
+    return (
+<<<<<<< Updated upstream
+        <nav className='navbar'>
+            <Link to='/register/login' state={{background: location}}>
                 <div>Login</div>
             </Link>
+            {/* <Outlet /> */}
         </nav>
     )
+=======
+      <nav className="navbar">
+        <Link to="/register/login">
+          <div>Login</div>
+        </Link>
+        <Link to="/photos/PhotosManagement">
+          <div>Add Photo</div>
+        </Link>
+      </nav>
+    );
+>>>>>>> Stashed changes
 }
 
 export default Navbar

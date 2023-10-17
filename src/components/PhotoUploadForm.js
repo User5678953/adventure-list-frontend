@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import "../styles/form.scss";
 
+// Import backend Endpoint
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+console.log("Backend URL:", backendURL);
+
+
+
 function PhotoUploadForm() {
   // Setting up state for each input field
   const [imageURL, setImageURL] = useState("");
@@ -9,8 +15,36 @@ function PhotoUploadForm() {
   const [location, setLocation] = useState("");
   const [tags, setTags] = useState("");
 
+const handleUpload = async (event) => {
+  event.preventDefault();
+  try {
+    console.log("About to send POST request");
+
+    const requestBody = {
+      imageURL: imageURL,
+      description: description,
+      isPublic: isPublic,
+      location: location,
+      tags: tags,
+    };
+
+    const response = await fetch(`${backendURL}/photos/upload`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("There was an error uploading the photo", error);
+  }
+};
+
   return (
-    <form>
+    <form onSubmit={handleUpload}>
       <div className="form-background">
         <label>Image URL:</label>
         <input
@@ -62,7 +96,7 @@ function PhotoUploadForm() {
         />
       </div>
 
-      <button type="button">Upload</button>
+      <button type="submit">Upload</button>
     </form>
   );
 }
