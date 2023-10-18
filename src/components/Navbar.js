@@ -3,29 +3,57 @@
 import React from "react"
 
 const Navbar = () => {
-    return (
-        <nav className='navbar'>
-            <a href='/' className='site-title'>
-                AdventureList 2.0
-            </a>
-            <ul>
-                <li>
-                    <a href='/login'>Login/Register</a>
-                </li>
-            </ul>
+    
+    const token = cookies.get("TOKEN")
 
-            {/* <Link to='/register/login'>
-                <div>Login</div>
-            </Link> */}
-               {/* <Routes>
-                <Route path='/register/login' element={
-                    <Login />
-                } 
+    const notLoggedIn = () => {
+        return (
 
-                />
-            </Routes> */}
-        </nav>
+                <>
+
+                <nav className='navbar'>
+                    <a href='/' className='site-title'>
+                        AdventureList 2.0
+                    </a>
+                    <ul>
+                        <li>
+                            <a href='/login'>Login/Register</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                </> 
+
+        )
+    }
+
+    const loggedIn = () => {
+        return (
+
+            <>
+
+            <nav className='navbar'>
+                <a href='/' className='site-title'>
+                    AdventureList 2.0
+                </a>
+                <ul>
+                    <li>
+                        <a href='/login'>New Adventure</a>
+                    </li>
+                    <li>
+                        <a href='/login'>Logout</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            </> 
+
     )
+    }
+
+    
 }
 
 export default Navbar
