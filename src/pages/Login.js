@@ -43,7 +43,7 @@ const Login = () => {
                 <input type="password" onChange={(e) => {setPassword(e.target.value)}} placeholder="Password"></input>
                 <input className="submit-btn" type="submit" onClick={submit}></input>
             </form>
-        <Link to="/register">Register Instead</Link>
+        <Link to="/register">Create an account</Link>
         
         </div>
     )
