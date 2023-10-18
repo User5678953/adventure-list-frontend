@@ -1,0 +1,83 @@
+* {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.photosDiv {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+}
+
+.photosDivImg {
+    height: 100%;
+    width: 100%;
+    border-width: 10px;
+    border-radius: 20px;
+}
+
+.mapDiv {
+    height: 50vh;
+    margin: 10px;
+}
+
+.mapImg {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+//////////////////////////////
+/// MODAL STYLING
+//////////////////////////////
+
+.modalDiv {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(91, 112, 131, 0.4);
+    backdrop-filter: blur(10px);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .modal input, .modal textarea {
+    color: black;
+}
+  .close-button {
+    position: absolute;
+    background-color: #db5e34;
+    color: white;
+    border-radius: 5px;
+    top: -31px;
+    right: -1px;
+    border: none;
+    font-weight: bolder;
+    font-size: 1rem;
+    width: 60px;
+    height: 40px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+    padding: 10px 15px; 
+  
+    &:hover {
+        background-color: #b84c2f; 
+  }
+}

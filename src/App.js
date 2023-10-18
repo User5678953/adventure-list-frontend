@@ -1,15 +1,23 @@
+<<<<<<< HEAD
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register'
 import React from 'react'
+=======
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+
+>>>>>>> development
 
 function App() {
   return (
     <div className="App">
-      <header >
+      <header>
         <Navbar />
+<<<<<<< HEAD
         <div className='container'>
         <Routes>
           <Route path="/register" element={<Register />} />
@@ -18,7 +26,13 @@ function App() {
         </div>
         <Home />
         
+=======
+>>>>>>> development
       </header>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
