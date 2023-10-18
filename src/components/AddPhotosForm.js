@@ -87,9 +87,9 @@ const handleUpload = async (event) => {
       </div>
 
       <div className="form-background checkbox-container">
-        <label>Public:</label>
+        <label>Set to Public:</label>
+      
         
-        <p className="form-background"> Select this box to set photo to public</p>
         <input
           type="checkbox"
           checked={isPublic}

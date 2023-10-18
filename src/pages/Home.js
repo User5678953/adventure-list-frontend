@@ -12,7 +12,7 @@
 
 
 import { Routes, Route } from 'react-router-dom'
-import AdventureCarousel from "../components/AdventureCarousel"
+//import AdventureCarousel from "../components/AdventureCarousel"
 //import MapBoard from '../components/MapBoard'
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
@@ -27,7 +27,7 @@ const Home = () => {
             element={
               <>
                 <PhotosDiv />
-                <AdventureCarousel />
+                {/*<AdventureCarousel />*/}
                 {/* <MapBoard /> */}
               </>
             }
@@ -42,7 +42,6 @@ const Home = () => {
             }
           />
         </Routes>
-    
       </div>
     );
 }
