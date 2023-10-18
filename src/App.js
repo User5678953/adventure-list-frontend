@@ -1,6 +1,6 @@
-import Navbar from './components/Navbar';
-import Home from './pages/Home'
-  import PhotosManagement from "./pages/PhotosManagement";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -8,17 +8,11 @@ function App() {
     <div className="App">
       <header>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/photos/PhotosManagement"
-            element={<PhotosManagement />}
-          />
-        </Routes>
-        <Home />
-      
-        
       </header>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }

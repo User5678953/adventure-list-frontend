@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/form.scss";
+import Modal from "./Modal";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
@@ -7,7 +8,7 @@ console.log("Backend URL:", backendURL);
 
 
 
-function PhotoUploadForm() {
+function AddPhotoForm() {
   // Setting up state for each input field
   const [imageURL, setImageURL] = useState("");
   const [description, setDescription] = useState("");
@@ -101,4 +102,4 @@ const handleUpload = async (event) => {
   );
 }
 
-export default PhotoUploadForm;
+export default AddPhotoForm;
