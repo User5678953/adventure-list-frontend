@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Login from './Login'
 import MapBoard from '../components/MapBoard'
+import React from 'react'
 
 
 const Home = () => {
