@@ -56,11 +56,11 @@ body {
     z-index: 1;
     text-align: center;
     outline: black solid 1px;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    width: 40vw;
-    height: 70vh;
+    width: 50vw;
+    height: 65vh;
 }
 .login-container h2 {
     color: white;
@@ -71,6 +71,21 @@ body {
     padding: 1rem;
     font-size: 20px;
     margin: 10px;
+    border-radius: 10px;
+}
+.login-container input::placeholder {
+    position: absolute;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::placeholder {
+    transform: translate(-10px, -10px) scale(0.5);
+    transform-origin: top left;
 }
 
 .submit-btn {

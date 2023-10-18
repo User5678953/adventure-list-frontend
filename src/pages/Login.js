@@ -23,6 +23,7 @@ const Login = () => {
                 if(res.data==="logged in") {
                     cookies.set("TOKEN", res.data.token, {path: '/',})
                     move('/')
+                    window.location.reload()
                 } else {
                     alert("try again")
                 }

@@ -2,6 +2,8 @@ import axios from "axios"
 import { useState } from "react"
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import Cookies from "universal-cookie"
+const cookies = new Cookies()
 
 const Register = () => {
 
@@ -19,7 +21,9 @@ const Register = () => {
                 username, password
             } ).then(res => {
                 if(res.data==="Success"){
+                    cookies.set("TOKEN", res.data.token, {path: '/',})
                     move('/')
+                    window.location.reload()
                 } else {
                     alert("try again")
                 }
