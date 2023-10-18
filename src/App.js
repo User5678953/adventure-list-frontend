@@ -1,18 +1,18 @@
-import Navbar from './components/Navbar';
-import Dashboard from './pages/Dashboard';
-import Home from './pages/Home';
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 
 function App() {
   return (
     <div className="App">
-      <header >
+      <header>
         <Navbar />
-        <Home />
-        {/* <Dashboard /> */} 
-        {/* need to create conditional statement that renders Home/Dashboard depending on if user is logged in */}
-        
       </header>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
