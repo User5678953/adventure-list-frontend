@@ -1,4 +1,0 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/User5678953/adventure-list-frontend.git
-	branch = development
