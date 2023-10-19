@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 
 // IMPORT SASS STYLES
-import './styles.scss'
+import "../src/styles/styles.scss";
 // SET UP ROUTER
 import { BrowserRouter as Router } from 'react-router-dom'
 

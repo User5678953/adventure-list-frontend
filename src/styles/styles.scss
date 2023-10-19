@@ -1,5 +1,8 @@
 * {
-    color: black;
+
+    color: white;
+    background-color: black;
+
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
@@ -99,26 +102,31 @@ input:focus::placeholder {
 
 
 
-}
+
 
 .photosDiv {
     height: 60vh;
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 20px;
+    
 }
 
 .photosDivImg {
     height: 100%;
+    width: 100%;
+    border-width: 10px;
+    border-radius: 20px;
 }
 
 .mapDiv {
-    height: 30vh;
+    height: 50vh;
     margin: 10px;
 }
 
 .mapImg {
     height: 100%;
+    width: 100%;
 }
 
 
@@ -147,11 +155,16 @@ input:focus::placeholder {
     background-color: white;
     border-radius: 5px;
   }
-
+  .modal input, .modal textarea {
+    color: black;
+}
   .close-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    background-color: #db5e34;
+    color: white;
+    border-radius: 5px;
+    top: -31px;
+    right: -1px;
     border: none;
     font-weight: bolder;
     font-size: 1rem;
