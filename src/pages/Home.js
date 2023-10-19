@@ -24,6 +24,13 @@ import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
 
 
+/**
+ * Need conditional rendering for MapBoard
+ * So if user logged in show adventure carousel
+ * If user NOT logged in, show MapBoard
+ * 
+ */
+
 const Home = () => {
 
     return (
@@ -34,8 +41,8 @@ const Home = () => {
             element={
               <>
                 <PhotosDiv />
-                <AdventureCarousel />
-                {/* <MapBoard /> */}
+                <AdventureCarousel /> {/*shown when logged in*/}
+                {/* <MapBoard /> */}  {/*only shown when user logged out*/}
               </>
             }
           />

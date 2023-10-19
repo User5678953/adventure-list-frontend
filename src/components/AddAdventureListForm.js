@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import "../styles/form.scss";
 
+/**
+ * PASS THIS COMPONENT IN THE ADVENTURE CAROUSEL COMPONENT
+ */
+
 
  // Setting up state for each input field
 function AddAdventureListForm() {
