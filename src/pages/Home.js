@@ -1,8 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import Login from './Login'
 import MapBoard from '../components/MapBoard'
+
+import React from 'react'
+
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
+
 
 const Home = () => {
 

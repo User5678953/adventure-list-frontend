@@ -1,3 +1,5 @@
+import React from "react"
+
 const MapBoard = () => {
     return (
         <div className='mapDiv'>

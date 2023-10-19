@@ -1,8 +1,104 @@
 * {
     color: black;
-    background-color: blanchedalmond;
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: blanchedalmond;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.site-title{
+    color: white;
+    font-size: 50px;
+}
+
+.navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+//////////////////////////////////
+/// LOGIN/REGISTRATION MODAL
+/////////////////////////////////
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    outline: black solid 1px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    height: 65vh;
+}
+.login-container h2 {
+    color: white;
+    font-size: xx-large;
+}
+
+.login-container input {
+    padding: 1rem;
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.login-container input::placeholder {
+    position: absolute;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus::placeholder {
+    transform: translate(-10px, -10px) scale(0.5);
+    transform-origin: top left;
+}
+
+.submit-btn {
+    border-radius: 10px;
+}
+
+.submit-btn:hover {
+    font-size: 22px;
+}
+
+
+
+
 }
 
 .photosDiv {
