@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import React from 'react'
 
 // Array of random pictures to test random image function
 const randPic = [

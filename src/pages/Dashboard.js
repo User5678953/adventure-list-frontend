@@ -1,3 +1,4 @@
+import React from 'react'
 import { Route, Routes } from "react-router-dom"
 import AdventureCarousel from "../components/AdventureCarousel"
 import PhotosDiv from "../components/PhotosDiv"
