@@ -1,3 +1,4 @@
+
 // import {Link, Route, Routes} from 'react-router-dom'
 // import Login from '../pages/Login'
 import React from "react"
@@ -57,6 +58,7 @@ const Navbar = () => {
 
     return (
         token ? loggedIn() : notLoggedIn()
+
     )
     
 }

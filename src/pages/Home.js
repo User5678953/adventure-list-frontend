@@ -1,21 +1,26 @@
 import { Routes, Route } from 'react-router-dom'
 import Login from './Login'
 import MapBoard from '../components/MapBoard'
+
 import React from 'react'
+
+import PhotosDiv from '../components/PhotosDiv'
+import Modal from '../components/Modal'
 
 
 const Home = () => {
+
     return (
-        <div>
+        <div className='homePage'>
             <Routes>
                 <Route path='/register/login' element={
-                    <Login /> 
+                    <>
+                        <Modal />
+                        {/* <Login />  */}
+                    </>
                 } />       
             </Routes>
-            <h1>Home Page</h1>
-            <div className="publicPhotos">
-                <img src="https://petapixel.com/assets/uploads/2022/08/fdfs19-800x533.jpg" alt="Landscape picture" />
-            </div>
+            <PhotosDiv />
             <MapBoard />
         </div>
     )
