@@ -1,6 +1,8 @@
 // import {Link, Route, Routes} from 'react-router-dom'
 // import Login from '../pages/Login'
 import React from "react"
+import Cookies from "universal-cookie"
+const cookies = new Cookies()
 
 const Navbar = () => {
     
@@ -53,6 +55,9 @@ const Navbar = () => {
     )
     }
 
+    return (
+        token ? loggedIn() : notLoggedIn()
+    )
     
 }
 
