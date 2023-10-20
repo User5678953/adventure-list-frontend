@@ -32,13 +32,16 @@ function AddAdventureListForm() {
 
     // TODO: Send the adventureData to the backend to save in the database.
     try {
-      const response = await fetch("/adventures", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(adventureData),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/adventureList`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(adventureData),
+        }
+      );
 
       if (response.ok) {
         // Handle a successful response here (e.g., show a success message, redirect, etc.)
