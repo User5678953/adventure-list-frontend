@@ -42,36 +42,32 @@ const Navbar = () => {
 
     const loggedIn = () => {
         return (
-
-            <>
-       
-
-            <nav className='navbar'>
-                <a href='/' className='site-title'>
-                    AdventureList 2.0
-                </a>
-                <ul>
-                    <li>
-                             {/* Button to trigger Add Adventure modal */}
-      <a onClick={() => setShowAddAdventureModal(true)}>
-        New Adventure
-      </a>
-      {showAddAdventureModal && (
-        <Modal onClose={() => setShowAddAdventureModal(false)}>
-          <AddAdventureForm />
-        </Modal>
-      )}
-                    </li>
-                    <li>
-                        <a href='/login'>Logout</a>
-                    </li>
-                </ul>
-
+          <>
+            <nav className="navbar">
+              <a href="/" className="site-title">
+                AdventureList 2.0
+              </a>
+              <ul>
+                <li>
+                  {/* Button to trigger Add Adventure modal */}
+                  <a onClick={() => setShowAddAdventureModal(true)}>
+                    New Adventure
+                  </a>
+                  {showAddAdventureModal && (
+                    <Modal onClose={() => setShowAddAdventureModal(false)}>
+                      <AddAdventureForm
+                        onClose={() => setShowAddAdventureModal(false)}
+                      />
+                    </Modal>
+                  )}
+                </li>
+                <li>
+                  <a href="/login">Logout</a>
+                </li>
+              </ul>
             </nav>
-
-            </> 
-
-    )
+          </>
+        );
     }
 
     return (

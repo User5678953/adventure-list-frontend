@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../styles/form.scss";
 
-/**
- * PASS THIS COMPONENT IN THE ADVENTURE CAROUSEL COMPONENT
- */
-
-
- // Setting up state for each input field
-function AddAdventureListForm() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [location, setLocation] = useState('');
+// Setting up state for each input field
+function AddAdventureListForm({ onClose }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
   const [completed, setCompleted] = useState(false);
-  const [tags, setTags] = useState('');
-  const [owner, setOwner] = useState('');
-  
-
+  const [tags, setTags] = useState("");
+  const [owner, setOwner] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -47,20 +40,16 @@ function AddAdventureListForm() {
         // Handle a successful response here (e.g., show a success message, redirect, etc.)
         console.log("Adventure created successfully");
 
-        // Clear the form fields if needed
-        setTitle("");
-        setDescription("");
-        setLocation("");
-        setCompleted(false);
-        setTags("");
-        setOwner("");
+        // Close the modal
+        onClose();
+        alert("Adventure created successfully!");
       } else {
-        // Handle errors or validation failures
+        // Handle errors
         const errorData = await response.json();
         console.error("Error creating adventure:", errorData);
       }
     } catch (error) {
-      // Handle network or other unexpected errors
+      // Handle network  errors
       console.error("Error creating adventure:", error);
     }
   };

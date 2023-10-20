@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { useState } from "react";
 import PhotoUploadForm from "./AddPhotosForm";
 import Modal from "./Modal";
@@ -22,6 +22,6 @@ const AdventureCarousel = () => {
       )}
     </div>
   );
-}
+};
 
-export default AdventureCarousel
+export default AdventureCarousel;
