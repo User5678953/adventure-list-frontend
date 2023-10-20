@@ -66,36 +66,63 @@ function AddAdventureListForm() {
     <form onSubmit={handleSubmit}>
       <div className="form-background">
         <label>Title:</label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
       </div>
 
       <div className="form-background">
         <label>Description:</label>
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
+        <textarea
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
       </div>
 
       <div className="form-background">
         <label>Location:</label>
-        <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
+        <input
+          type="text"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
       </div>
 
       <div className="form-background">
         <label>Tags:</label>
-        <input type="text" value={tags} onChange={(e) => setTags(e.target.value)} />
+        <input
+          type="text"
+          value={tags}
+          onChange={(e) => setTags(e.target.value)}
+        />
       </div>
 
       <div className="form-background">
         <label>Owner:</label>
-        <input type="text" value={owner} onChange={(e) => setOwner(e.target.value)} required />
+        <input
+          type="text"
+          value={owner}
+          onChange={(e) => setOwner(e.target.value)}
+          required
+        />
       </div>
 
       <div className="form-background checkbox-container">
         <label>Completed:</label>
-        <input type="checkbox" checked={completed} onChange={(e) => setCompleted(e.target.checked)} />
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={(e) => setCompleted(e.target.checked)}
+        />
       </div>
 
-
-      <button type="submit">Add Adventure</button>
+      <button type="submit" className="submit">
+        Add Adventure
+      </button>
     </form>
   );
 }

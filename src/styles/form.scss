@@ -55,7 +55,16 @@ button {
     display: block;
    
 }
+.submit {
+    width: 100%;
+}
 
+.extend { 
+    height: 100%
+}
+.push-down {
+    margin-top: 60px;
+}
 button:hover {
     background-color: #2980b9;
 }
