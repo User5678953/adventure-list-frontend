@@ -1,26 +1,77 @@
 * {
 
-    color: white;
-    background-color: black;
+    color: #EAEAEA;
+
 
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
+    
 }
 
 body {
     margin: 0;
-    background-color: blanchedalmond;
+    // Option 2
+     background-color:#181818;
+
+     // Option 1
+     //background-color:#2E2E2E;
 }
+//////////////////////////////
+/// MODAL STYLING
+//////////////////////////////
+
+.modalDiv {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(91, 112, 131, 0.4);
+    backdrop-filter: blur(10px);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    background-color: #EAEAEA;
+    border-radius: 50px;
+    border: 5px solid black;
+    height: 77%;
+  }
+  .modal input, .modal textarea {
+    color: black;
+}
+  .close-button {
+    position: absolute;
+    background-color: #db5e34;
+    color: white;
+    border-radius: 5px;
+    top: -31px;
+    right: -1px;
+    border: none;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
 
 .navbar {
-    background-color: black;
+    // Option 2
+    background-color:#242424;
+    // Option 1
+    //background-color: #191970;
+
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
 }
 
 .site-title{
@@ -135,41 +186,4 @@ input:focus::placeholder {
 
 
 
-//////////////////////////////
-/// MODAL STYLING
-//////////////////////////////
 
-.modalDiv {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(91, 112, 131, 0.4);
-    backdrop-filter: blur(10px);    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modal {
-    position: absolute;
-    width: 40%;
-    height: 60%;
-    background-color: white;
-    border-radius: 5px;
-  }
-  .modal input, .modal textarea {
-    color: black;
-}
-  .close-button {
-    position: absolute;
-    background-color: #db5e34;
-    color: white;
-    border-radius: 5px;
-    top: -31px;
-    right: -1px;
-    border: none;
-    font-weight: bolder;
-    font-size: 1rem;
-  }

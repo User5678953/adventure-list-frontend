@@ -14,6 +14,7 @@ function AddAdventureListForm() {
   const [completed, setCompleted] = useState(false);
   const [tags, setTags] = useState('');
   const [owner, setOwner] = useState('');
+  
 
 
   const handleSubmit = async (event) => {
@@ -30,6 +31,35 @@ function AddAdventureListForm() {
     };
 
     // TODO: Send the adventureData to the backend to save in the database.
+    try {
+      const response = await fetch("/adventures", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(adventureData),
+      });
+
+      if (response.ok) {
+        // Handle a successful response here (e.g., show a success message, redirect, etc.)
+        console.log("Adventure created successfully");
+
+        // Clear the form fields if needed
+        setTitle("");
+        setDescription("");
+        setLocation("");
+        setCompleted(false);
+        setTags("");
+        setOwner("");
+      } else {
+        // Handle errors or validation failures
+        const errorData = await response.json();
+        console.error("Error creating adventure:", errorData);
+      }
+    } catch (error) {
+      // Handle network or other unexpected errors
+      console.error("Error creating adventure:", error);
+    }
   };
 
   return (
