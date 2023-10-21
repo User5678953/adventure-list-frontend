@@ -10,4 +10,4 @@ const AdvCardImg = ({photos}) => {
     )
 }
 
-export default AdvCardImg
+export default AdvCardImg   
