@@ -1,8 +1,5 @@
 import React from "react"
 
-// // IMPORT STYLE
-// import "../styles/cards.scss"
-
 const AdvCardImg = ({photos}) => {
     return (
         <img 

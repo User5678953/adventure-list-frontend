@@ -1,8 +1,5 @@
 import React from "react"
 
-// // IMPORT STYLE
-// import "../styles/cards.scss"
-
 const AdvCardBody = ({title, location}) => {
     return (
         <div className="adventure-body">
