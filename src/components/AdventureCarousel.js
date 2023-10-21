@@ -1,6 +1,9 @@
 import React from "react"
 import AdvCard from "./AdvCard"
 
+// IMPORT TEST DATA
+import advTestData from '../TestAdvData'
+
 const AdventureCarousel = () => {
     return (
         <div className="adventures">
