@@ -6,9 +6,13 @@ import advTestData from '../TestAdvData'
 
 const AdventureCarousel = () => {
     return (
-        <div className="adventures">
-            <h1>Adventure Carousel Component</h1>
-            <AdvCard />
+        <div className="adventure-carousel">
+            {/* <h1>Adventure Carousel Component</h1> */}
+            <div className="adventures">
+                {advTestData.map((adventure, i) => {
+                    return (<AdvCard {...adventure} key={i} />)
+                })}
+            </div>
         </div>
     )
 }

@@ -1,8 +1,12 @@
 import React from "react"
 
-const AdvCardImg = () => {
+const AdvCardImg = ({photos}) => {
     return (
-        <h1>Adventure Card Image Component</h1>
+        <img 
+            src={photos[0].imageURL}
+            className="adventure-card-image"
+            alt={photos[0].description}
+        />
     )
 }
 
