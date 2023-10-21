@@ -1,0 +1,14 @@
+.adventures {
+    display: flex;
+    align-items: center;
+  }
+  
+  .adventures .adventure {
+    margin: 0 10px;
+  }
+  
+  .adventure-card-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }

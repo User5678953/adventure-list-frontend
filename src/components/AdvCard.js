@@ -2,6 +2,9 @@ import React from "react"
 import AdvCardBody from "./AdvCardBody"
 import AdvCardImg from "./AdvCardImg"
 
+// // IMPORT STYLE
+// import "../styles/cards.scss"
+
 const AdvCard = ({title, location, photos}) => {
     return (
         <div className="adventure">
