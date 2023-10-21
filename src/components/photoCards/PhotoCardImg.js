@@ -1,10 +1,12 @@
 import React from "react"
 
-const PhotoCardImg = () => {
+const PhotoCardImg = ({photos}) => {
     return (
-        <div className="photo-card-img">
-            <h1>PhotoCardImg Component</h1>
-        </div>
+        <img 
+            src={photos[0].imageURL}
+            className="photo-card-img"
+            alt={photos[0].description}
+        />
     )
 }
 
