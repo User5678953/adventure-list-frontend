@@ -1,5 +1,6 @@
 import { useState } from "react"
 import AddAdventureForm from "./AddAdventureListForm";
+import Login from "../pages/Login";
 import Modal from "./Modal"
 import React from "react"
 import Cookies from "universal-cookie"
@@ -15,6 +16,9 @@ const Navbar = () => {
     
      // State for Add Adventure
      const [showAddAdventureModal, setShowAddAdventureModal] = useState(false);
+
+     // State for Login 
+     const [showLogin, setLogin] = useState(false);
 
      // State for username and password
      const [username, setUsername] = useState('')
@@ -61,7 +65,12 @@ const Navbar = () => {
                     </a>
                     <ul>
                         <li>
-                            <a href='/login' >Login/Register</a>
+                            <a onClick={() => setLogin(true)} >Login/Register</a>
+                            {showLogin && (
+        <Modal onClose={() => setLogin(false)}>
+          <Login />
+        </Modal>
+      )}
                         </li>
                     </ul>
 
