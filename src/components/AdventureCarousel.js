@@ -1,11 +1,11 @@
 import React from "react"
-import AdvCard from "./AdvCard"
+import AdvCard from "./adventureCard/AdvCard"
 
 // IMPORT STYLE
 import "../styles/cards.scss"
 
 // IMPORT TEST DATA
-import advTestData from '../TestAdvData'
+import advTestData from './adventureCard/TestAdvData'
 
 const AdventureCarousel = () => {
     return (
