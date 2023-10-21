@@ -53,12 +53,35 @@ button {
     cursor: pointer;
     margin-top: 30px;
     display: block;
+   
+}
+.submit {
     width: 100%;
 }
 
+.extend { 
+    height: 100%
+}
+.push-down {
+    margin-top: 60px;
+}
 button:hover {
     background-color: #2980b9;
 }
+ .close-button {
+    position: absolute;
+    background-color: #db5e34;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+
+.close-button:hover {
+    background-color: #ff0000;
+}
+
 p {
     margin-left: 5px;
     font-style: italic;
