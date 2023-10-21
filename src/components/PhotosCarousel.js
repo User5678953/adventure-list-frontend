@@ -1,6 +1,12 @@
+import React from "react"
+import PhotoCard from "./photoCards/PhotoCard"
+
 const PhotosCarousel = () => {
     return (
-        <h1>Photos Carousel Component</h1>
+        <div className="photo-carousel">
+            <h1>Photos Carousel Component</h1>
+            <PhotoCard />
+        </div>
     )
 }
 
