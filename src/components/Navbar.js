@@ -1,10 +1,10 @@
-// import {Link, Route, Routes} from 'react-router-dom'
-// import Login from '../pages/Login'
 import { useState } from "react"
 import AddAdventureForm from "./AddAdventureListForm";
 import Modal from "./Modal"
 import React from "react"
 import Cookies from "universal-cookie"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const cookies = new Cookies()
 
 
@@ -16,7 +16,39 @@ const Navbar = () => {
      // State for Add Adventure
      const [showAddAdventureModal, setShowAddAdventureModal] = useState(false);
 
+     // State for username and password
+     const [username, setUsername] = useState('')
+     const [password, setPassword] = useState('')
+
+    // token verifaction for user
     const token = cookies.get("TOKEN")
+
+
+    // function for logging out
+
+    const move = useNavigate()
+
+    async function submit(e) {
+        e.preventDefault()
+
+        try {
+           const response = await axios.delete("http://localhost:3000/register/logout", {
+                username, password
+            } ).then(res =>{
+                if(res.data==="logged out") {
+                    cookies.remove("TOKEN", res.data.token, {path: '/',})
+                    move('/')
+                    window.location.reload()
+                } else {
+                    alert("try again")
+                }
+            })
+             console.log("User Logged Out")
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     const notLoggedIn = () => {
         return (
@@ -29,7 +61,7 @@ const Navbar = () => {
                     </a>
                     <ul>
                         <li>
-                            <a href='/login'>Login/Register</a>
+                            <a href='/login' >Login/Register</a>
                         </li>
                     </ul>
 
@@ -63,7 +95,7 @@ const Navbar = () => {
       )}
                     </li>
                     <li>
-                        <a href='/login'>Logout</a>
+                        <a href='/logout' onClick={submit}>Logout</a>
                     </li>
                 </ul>
 
