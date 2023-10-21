@@ -2,7 +2,9 @@ import React from "react"
 
 const AdvCardBody = () => {
     return (
-        <h1>Adventure Card Body Component</h1>
+        <div className="adventure-body">
+            <h1>Adventure Card Body Component</h1>
+        </div>
     )
 }
 

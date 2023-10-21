@@ -3,10 +3,10 @@ import AdvCard from "./AdvCard"
 
 const AdventureCarousel = () => {
     return (
-        <>
+        <div className="adventures">
             <h1>Adventure Carousel Component</h1>
             <AdvCard />
-        </>
+        </div>
     )
 }
 
