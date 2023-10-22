@@ -22,6 +22,7 @@ import React from 'react'
 
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
+import PhotosCarousel from '../components/PhotosCarousel'
 
 
 /**
@@ -43,6 +44,7 @@ const Home = () => {
                 <PhotosDiv />
                 <AdventureCarousel /> {/*shown when logged in*/}
                 {/* <MapBoard /> */}  {/*only shown when user logged out*/}
+                <PhotosCarousel /> {/* added for testing pourposes */}
               </>
             }
           />
