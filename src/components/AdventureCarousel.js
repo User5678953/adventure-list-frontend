@@ -1,5 +1,8 @@
 import React from "react"
 import AdvCard from "./adventureCards/AdvCard"
+import { useState } from "react";
+import PhotoUploadForm from "./AddPhotosForm";
+import Modal from "./Modal";
 
 // IMPORT STYLE
 import "../styles/cards.scss"
@@ -8,7 +11,10 @@ import "../styles/cards.scss"
 import advTestData from './adventureCards/TestAdvData'
 
 const AdventureCarousel = () => {
+  // state for photo Upload
+  const [showUploadModal, setShowUploadModal] = useState(false);
     return (
+      <>
         <div className="adventure-carousel">
             {/* <h1>Adventure Carousel Component</h1> */}
             <div className="adventures" style={{width: "18rem"}}>
@@ -17,7 +23,23 @@ const AdventureCarousel = () => {
                 })}
             </div>
         </div>
-    )
-}
 
-export default AdventureCarousel
+
+    <div>
+      <h1>Adventure Carousel Component</h1>
+
+      {/* Button to trigger photo upload modal */}
+      <button onClick={() => setShowUploadModal(true)}>Upload Photo</button>
+
+      {/* Conditional rendering of the modal with PhotoUploadForm */}
+      {showUploadModal && (
+        <Modal onClose={() => setShowUploadModal(false)}>
+          <PhotoUploadForm />
+        </Modal>
+      )}
+    </div>
+    </>
+  );
+};
+
+export default AdventureCarousel;

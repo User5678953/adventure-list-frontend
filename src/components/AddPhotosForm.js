@@ -45,7 +45,7 @@ const handleUpload = async (event) => {
 };
 
   return (
-    <form onSubmit={handleUpload}>
+    <form className="extend" onSubmit={handleUpload}>
       <div className="form-background">
         <label>Image URL:</label>
         <input
@@ -88,8 +88,11 @@ const handleUpload = async (event) => {
 
       <div className="form-background checkbox-container">
         <label>Public:</label>
-        
-        <p className="form-background"> Select this box to set photo to public</p>
+
+        <p className="form-background">
+          {" "}
+          Select this box to set photo to public
+        </p>
         <input
           type="checkbox"
           checked={isPublic}
@@ -97,7 +100,9 @@ const handleUpload = async (event) => {
         />
       </div>
 
-      <button type="submit">Upload</button>
+      <button type="submit" className="submit push-down">
+        Upload
+      </button>
     </form>
   );
 }
