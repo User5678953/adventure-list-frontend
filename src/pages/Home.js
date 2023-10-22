@@ -10,19 +10,19 @@
  * - The login path (`/register/login`): Displays a modal for user login.
  */
 
-
+import Cookies from "universal-cookie";
 import { Routes, Route } from 'react-router-dom'
 
 import AdventureCarousel from "../components/AdventureCarousel"
-
-//import Login from './Login'
-//import MapBoard from '../components/MapBoard'
+import MapBoard from '../components/MapBoard'
 
 import React from 'react'
 
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
-//import PhotosCarousel from '../components/PhotosCarousel'
+
+const cookies = new Cookies()
+
 
 
 /**
@@ -30,37 +30,79 @@ import Modal from '../components/Modal'
  * So if user logged in show adventure carousel
  * If user NOT logged in, show MapBoard
  * 
+ * DONE
+ * 
  */
+
 
 const Home = () => {
 
-    return (
-      <div className="homePage">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <PhotosDiv />
-                <AdventureCarousel /> {/*shown when logged in*/}
-                {/* <MapBoard /> */}  {/*only shown when user logged out*/}
-                {/* <PhotosCarousel /> added for testing pourposes */}
-              </>
-            }
-          />
-          <Route
-            path="/register/login"
-            element={
-              <>
-                <Modal />
-                {/* <Login />  */}
-              </>
-            }
-          />
-        </Routes>
+     // token verifaction for user
+     const token = cookies.get("TOKEN");
+
+     const loggedIn = () => {
+      return (
+        <div className="homePage">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <PhotosDiv />
+                  <AdventureCarousel /> {/*shown when logged in*/}
+                  {/* <MapBoard /> */}  {/*only shown when user logged out*/}
+                  {/* <PhotosCarousel /> added for testing pourposes */}
+                </>
+              }
+            />
+            <Route
+              path="/register/login"
+              element={
+                <>
+                  <Modal />
+                  {/* <Login />  */}
+                </>
+              }
+            />
+          </Routes>
+      
+        </div>
+      );
+     }
+
+     const notLoggedin = () => {
+      return (
+        <div className="homePage">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <PhotosDiv />
+                  {/* <AdventureCarousel /> shown when logged in */}
+                  <MapBoard />   {/*only shown when user logged out*/}
+                  {/* <PhotosCarousel /> added for testing pourposes */}
+                </>
+              }
+            />
+            <Route
+              path="/register/login"
+              element={
+                <>
+                  <Modal />
+                  {/* <Login />  */}
+                </>
+              }
+            />
+          </Routes>
+      
+        </div>
+      );
+     }
+
+    return token ? loggedIn() : notLoggedin()
+
     
-      </div>
-    );
 }
 
 export default Home
