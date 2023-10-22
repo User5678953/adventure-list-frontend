@@ -1,23 +1,66 @@
+/**
+ * Home Component
+ * 
+ * This component is the main landing page of the application. It renders:
+ * - A photos display section (PhotosDiv component)
+ * - A map board (MapBoard component)
+ * 
+ * It also contains routing logic for:
+ * - The root path (`/`): Which displays the photos and the map.
+ * - The login path (`/register/login`): Displays a modal for user login.
+ */
+
+
 import { Routes, Route } from 'react-router-dom'
+
+import AdventureCarousel from "../components/AdventureCarousel"
+
 import Login from './Login'
 import MapBoard from '../components/MapBoard'
 
+import React from 'react'
+
+import PhotosDiv from '../components/PhotosDiv'
+import Modal from '../components/Modal'
+import PhotosCarousel from '../components/PhotosCarousel'
+
+
+/**
+ * Need conditional rendering for MapBoard
+ * So if user logged in show adventure carousel
+ * If user NOT logged in, show MapBoard
+ * 
+ */
 
 const Home = () => {
+
     return (
-        <div>
-            <Routes>
-                <Route path='/register/login' element={
-                    <Login /> 
-                } />       
-            </Routes>
-            <h1>Home Page</h1>
-            <div className="publicPhotos">
-                <img src="https://petapixel.com/assets/uploads/2022/08/fdfs19-800x533.jpg" alt="Landscape picture" />
-            </div>
-            <MapBoard />
-        </div>
-    )
+      <div className="homePage">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <PhotosDiv />
+                <AdventureCarousel /> {/*shown when logged in*/}
+                {/* <MapBoard /> */}  {/*only shown when user logged out*/}
+                {/* <PhotosCarousel /> added for testing pourposes */}
+              </>
+            }
+          />
+          <Route
+            path="/register/login"
+            element={
+              <>
+                <Modal />
+                {/* <Login />  */}
+              </>
+            }
+          />
+        </Routes>
+    
+      </div>
+    );
 }
 
 export default Home
