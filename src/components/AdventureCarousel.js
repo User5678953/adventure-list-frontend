@@ -9,7 +9,7 @@ import Modal from "./Modal";
 import "../styles/cards.scss"
 
 // Import backend Endpoint
-const backendURL = process.env.REACT_APP_BACKEND_URL;
+// const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 // IMPORT TEST DATA
 import advTestData from './adventureCards/TestAdvData'
