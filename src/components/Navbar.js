@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import React from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const cookies = new Cookies();
 
 const Navbar = () => {
@@ -54,9 +54,10 @@ const Navbar = () => {
     return (
       <>
         <nav className="navbar">
-          <a href="/" className="site-title">
-            AdventureList 2.0
-          </a>
+         <Link to="/" className="site-title">
+          AdventureList 2.0
+        </Link>
+
           <ul>
             <li>
               <a onClick={() => setLogin(true)}>Login/Register</a>
@@ -76,9 +77,9 @@ const Navbar = () => {
     return (
       <>
         <nav className="navbar">
-          <a href="/" className="site-title">
+          <Link to="/" className="site-title">
             AdventureList 2.0
-          </a>
+          </Link> 
           <ul>
             <li>
               {/* Button to trigger Add Adventure modal */}
