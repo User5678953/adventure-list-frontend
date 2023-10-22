@@ -15,14 +15,14 @@ import { Routes, Route } from 'react-router-dom'
 
 import AdventureCarousel from "../components/AdventureCarousel"
 
-import Login from './Login'
-import MapBoard from '../components/MapBoard'
+//import Login from './Login'
+//import MapBoard from '../components/MapBoard'
 
 import React from 'react'
 
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
-import PhotosCarousel from '../components/PhotosCarousel'
+//import PhotosCarousel from '../components/PhotosCarousel'
 
 
 /**

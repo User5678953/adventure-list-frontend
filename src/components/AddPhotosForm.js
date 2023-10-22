@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/form.scss";
-import Modal from "./Modal";
+//import Modal from "./Modal";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;

@@ -1,6 +1,6 @@
 import React from "react"
 import AdvCard from "./adventureCards/AdvCard"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PhotoUploadForm from "./AddPhotosForm";
 import Modal from "./Modal";
 
