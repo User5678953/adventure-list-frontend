@@ -44,7 +44,7 @@ const Home = () => {
                 <PhotosDiv />
                 <AdventureCarousel /> {/*shown when logged in*/}
                 {/* <MapBoard /> */}  {/*only shown when user logged out*/}
-                <PhotosCarousel /> {/* added for testing pourposes */}
+                {/* <PhotosCarousel /> added for testing pourposes */}
               </>
             }
           />
