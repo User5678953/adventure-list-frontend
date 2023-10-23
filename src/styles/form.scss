@@ -4,6 +4,7 @@ form {
     border-radius: 50px;
     border-style: solid;
     background-color: white;
+    height: 76vh;
 }
 
 label {
@@ -85,5 +86,14 @@ button:hover {
 p {
     margin-left: 5px;
     font-style: italic;
-
+}
+h1 {
+    color: black;
+    font-size: xx-large;
+}
+h3 {
+    font-style: italic;
+   color: black;
+   margin-bottom: -20px;
+   margin-top: 20px;
 }
