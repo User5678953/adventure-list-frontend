@@ -115,14 +115,14 @@ const AdventureCarousel = () => {
 
           {/* <div className="adventures" style={{ width: "18rem" }}> */}
           {/* use 'adventure' for live data */}
-          {adventure.map((adventure, i) => {
+          {/* {adventure.map((adventure, i) => {
               return (<AdvCard {...adventure} key={i} />)
-            })}
+            })} */}
 
           {/* use 'advTestData' for local test dataset */}
-          {/* {advTestData.map((adventure, i) => {
+          {advTestData.map((adventure, i) => {
             return (<AdvCard {...adventure} key={i} />)
-          })} */}
+          })}
           {/* </div> */}
         </Carousel>
       </div>
