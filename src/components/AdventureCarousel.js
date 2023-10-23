@@ -30,8 +30,16 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 const AdventureCarousel = () => {
 
 
+
+  
+{/* Upload Photo button needs to be moved into the view adventure modal */}
   // state for photo Upload
   const [showUploadModal, setShowUploadModal] = useState(false);
+
+
+
+
+
 
   const [adventure, setAdventure] = useState([])
 
@@ -107,18 +115,23 @@ const AdventureCarousel = () => {
 
           {/* <div className="adventures" style={{ width: "18rem" }}> */}
           {/* use 'adventure' for live data */}
-          {/* {adventure.map((adventure, i) => {
+          {adventure.map((adventure, i) => {
               return (<AdvCard {...adventure} key={i} />)
-            })} */}
+            })}
 
           {/* use 'advTestData' for local test dataset */}
-          {advTestData.map((adventure, i) => {
+          {/* {advTestData.map((adventure, i) => {
             return (<AdvCard {...adventure} key={i} />)
-          })}
+          })} */}
           {/* </div> */}
         </Carousel>
       </div>
 
+
+
+
+
+{/* Upload Photo button needs to be moved into the view adventure modal */}
 
       <div>
         {/* Button to trigger photo upload modal */}
