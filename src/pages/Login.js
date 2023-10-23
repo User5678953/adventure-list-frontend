@@ -69,7 +69,7 @@ const Login = () => {
         <button
           type="submit"
           onClick={() => setRegister(true)}
-          className="submit"
+          className="submit create-account-btn"
         >
           Create an account
         </button>
