@@ -93,16 +93,6 @@ function AddAdventureListForm({ onClose }) {
         />
       </div>
 
-      <div className="form-background">
-        <label>Owner:</label>
-        <input
-          type="text"
-          value={owner}
-          onChange={(e) => setOwner(e.target.value)}
-          required
-        />
-      </div>
-
       <div className="form-background checkbox-container">
         <label>Completed:</label>
         <input
