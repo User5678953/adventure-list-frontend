@@ -79,7 +79,7 @@ const Navbar = () => {
         <nav className="navbar">
           <Link to="/" className="site-title">
             AdventureList 2.0
-          </Link> 
+          </Link>
           <ul>
             <li>
               {/* Button to trigger Add Adventure modal */}
@@ -88,7 +88,9 @@ const Navbar = () => {
               </a>
               {showAddAdventureModal && (
                 <Modal onClose={() => setShowAddAdventureModal(false)}>
-                  <AddAdventureForm />
+                  <AddAdventureForm
+                    onClose={() => setShowAddAdventureModal(false)}
+                  />
                 </Modal>
               )}
             </li>
