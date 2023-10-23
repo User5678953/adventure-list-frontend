@@ -4,6 +4,7 @@ form {
     border-radius: 50px;
     border-style: solid;
     background-color: white;
+    height: 76vh;
 }
 
 label {
@@ -43,7 +44,6 @@ input[type="checkbox"] {
     justify-content: flex-start; 
 }
 
-
 button {
     background-color: #3498db;
     color: white;
@@ -59,12 +59,6 @@ button {
     width: 100%;
 }
 
-.extend { 
-    height: 100%
-}
-.push-down {
-    margin-top: 60px;
-}
 button:hover {
     background-color: #2980b9;
 }
@@ -85,5 +79,20 @@ button:hover {
 p {
     margin-left: 5px;
     font-style: italic;
-
+}
+h1 {
+    color: black;
+    font-size: xx-large;
+}
+h3 {
+    font-style: italic;
+   color: black;
+   margin-bottom: -20px;
+   margin-top: 20px;
+}
+.create-account-btn {
+    background-color: #41ab6d;  // A shade of green
+    &:hover {
+        background-color: #27AE60;  // A darker shade of green for hover
+    }
 }
