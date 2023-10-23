@@ -1,18 +1,17 @@
 import React from "react"
 import AdvCard from "./adventureCards/AdvCard"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PhotoUploadForm from "./AddPhotosForm";
 import Modal from "./Modal";
 
+// IMPORT TEST DATA
+import advTestData from './adventureCards/TestAdvData'
 
 // IMPORT STYLE
 import "../styles/cards.scss"
 
 // Import backend Endpoint
-// const backendURL = process.env.REACT_APP_BACKEND_URL;
-
-// IMPORT TEST DATA
-import advTestData from './adventureCards/TestAdvData'
+const backendURL = process.env.REACT_APP_BACKEND_URL;
 
 
 /**
@@ -27,29 +26,27 @@ const AdventureCarousel = () => {
   // state for photo Upload
   const [showUploadModal, setShowUploadModal] = useState(false);
 
-  // const [adventure, setAdventure] = useState(null)
+  const [adventure, setAdventure] = useState([])
 
-  // const getAdventure = async () => {
-  //   const response = await fetch (`${backendURL}/adventureList`)
-  //   const data = await response.json()
-  //   setAdventure(data)
-  // }
+  const getAdventure = async () => {
+    const response = await fetch (`${backendURL}/adventureList`)
+    const data = await response.json()
+    setAdventure(data)
+  }
 
-  // useEffect(() => {
-  //   getAdventure()
-  // },[])
+  useEffect(() => {
+    getAdventure()
+  },[])
 
-  // useEffect(()=> {
-  //   fetch(`${backendURL}/adventureList`).then(response => response.json()).then(data => setAdventure(data.message))
-  // }, [])
+  console.log(adventure)
   
     return (
       <>
         <div className="adventure-carousel">
             {/* <h1>Adventure Carousel Component</h1> */}
             <div className="adventures" style={{width: "18rem"}}>
-                {advTestData.map((advent, i) => {
-                    return (<AdvCard {...advent} key={i} />)
+                {adventure.map((adventure, i) => {
+                    return (<AdvCard {...adventure} key={i} />)
                 })}
             </div>
         </div>
