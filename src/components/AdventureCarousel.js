@@ -32,9 +32,6 @@ const AdventureCarousel = () => {
 
 
   
-{/* Upload Photo button needs to be moved into the view adventure modal */}
-  // state for photo Upload
-  const [showUploadModal, setShowUploadModal] = useState(false);
 
 
 
@@ -131,19 +128,7 @@ const AdventureCarousel = () => {
 
 
 
-{/* Upload Photo button needs to be moved into the view adventure modal */}
 
-      <div>
-        {/* Button to trigger photo upload modal */}
-        <button onClick={() => setShowUploadModal(true)}>Upload Photo</button>
-
-        {/* Conditional rendering of the modal with PhotoUploadForm */}
-        {showUploadModal && (
-          <Modal onClose={() => setShowUploadModal(false)}>
-            <PhotoUploadForm />
-          </Modal>
-        )}
-      </div>
     </>
   );
 };
