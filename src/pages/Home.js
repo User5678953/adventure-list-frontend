@@ -14,7 +14,7 @@ import Cookies from "universal-cookie";
 import { Routes, Route } from 'react-router-dom'
 
 import AdventureCarousel from "../components/AdventureCarousel"
-import MapBoard from '../components/MapBoard'
+// import MapBoard from '../components/MapBoard'
 
 import React from 'react'
 
@@ -51,7 +51,6 @@ const Home = () => {
                   <PhotosDiv />
                   <AdventureCarousel /> {/*shown when logged in*/}
                   {/* <MapBoard /> */}  {/*only shown when user logged out*/}
-                  {/* <PhotosCarousel /> added for testing pourposes */}
                 </>
               }
             />
@@ -80,8 +79,7 @@ const Home = () => {
                 <>
                   <PhotosDiv />
                   {/* <AdventureCarousel /> shown when logged in */}
-                  <MapBoard />   {/*only shown when user logged out*/}
-                  {/* <PhotosCarousel /> added for testing pourposes */}
+                  {/* <MapBoard />   only shown when user logged out */}
                 </>
               }
             />
