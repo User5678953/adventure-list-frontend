@@ -1,8 +1,6 @@
 import React from "react"
 import AdvCard from "./adventureCards/AdvCard"
 import { useEffect, useState } from "react";
-import PhotoUploadForm from "./AddPhotosForm";
-import Modal from "./Modal";
 
 // IMPORT REACT-MULTI-CAROUSEL NPM PACKAGE
 // Documentation: https://react-multi-carousel.surge.sh/?selectedKind=Carousel&selectedStory=With%20infinite%20mode&full=0&addons=1&stories=1&panelRight=0&addonPanel=kadira%2Fjsx%2Fpanel
@@ -14,12 +12,11 @@ import "react-multi-carousel/lib/styles.css"
 // IMPORT TEST DATA
 import advTestData from './adventureCards/TestAdvData'
 
-// IMPORT STYLE
+// IMPORT CARD STYLE
 import "../styles/cards.scss"
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
-
 
 /**
  * Need to create a fetch request to backend API to GET all adventures and display as individual cards.
@@ -28,15 +25,6 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
  * 
  */
 const AdventureCarousel = () => {
-
-
-
-  
-
-
-
-
-
 
   const [adventure, setAdventure] = useState([])
 
@@ -121,14 +109,9 @@ const AdventureCarousel = () => {
             return (<AdvCard {...adventure} key={i} />)
           })}
           {/* </div> */}
+
         </Carousel>
       </div>
-
-
-
-
-
-
     </>
   );
 };
