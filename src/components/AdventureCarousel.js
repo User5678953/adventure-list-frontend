@@ -97,8 +97,7 @@ const AdventureCarousel = () => {
           slidesToSlide={1}
           swipeable
         >
-
-          {/* <div className="adventures" style={{ width: "18rem" }}> */}
+          
           {/* use 'adventure' for live data */}
           {/* {adventure.map((adventure, i) => {
               return (<AdvCard {...adventure} key={i} />)
@@ -108,7 +107,6 @@ const AdventureCarousel = () => {
           {advTestData.map((adventure, i) => {
             return (<AdvCard {...adventure} key={i} />)
           })}
-          {/* </div> */}
 
         </Carousel>
       </div>

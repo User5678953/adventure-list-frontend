@@ -10,7 +10,7 @@ const AdvCard = ({_id, title, location, photos}) => {
     console.log(adventureClick)
 
     return (
-        <div className="adventure" onClick={() => setAdventureClick(`adventure id: ${_id} is clicked`)} >
+        <div className="adventure" onClick={() => setAdventureClick(_id)} >
             {/* <h1>Adventure Card Component</h1> */}
             <AdvCardImg photos={photos} />
             <AdvCardBody title={title} location={location} />

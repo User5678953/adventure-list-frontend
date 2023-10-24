@@ -1,5 +1,5 @@
 import React from "react"
-import PhotoCard from "./photoCards/PhotoCard"
+import PhotoCardImg from "./photoCards/PhotoCardImg"
 
 // IMPORT REACT-MULTI-CAROUSEL NPM PACKAGE
 // Documentation: https://react-multi-carousel.surge.sh/?selectedKind=Carousel&selectedStory=With%20infinite%20mode&full=0&addons=1&stories=1&panelRight=0&addonPanel=kadira%2Fjsx%2Fpanel
@@ -71,11 +71,9 @@ const PhotosCarousel = () => {
                 swipeable
             >
 
-                {/* <div className="photos" style={{width: "18rem"}}> */}
-                {advTestData.map((adventure) => {
-                    return (<PhotoCard photos={adventure.photos} />)
+                {advTestData.map((adventure, i) => {
+                    return (<PhotoCardImg photos={adventure.photos[i]} />)
                 })}
-                {/* </div> */}
 
             </Carousel>
         </div>
