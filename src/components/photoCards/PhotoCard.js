@@ -7,7 +7,7 @@ const PhotoCard = ({photos}) => {
         <div className="photo">
             {/* <h1>PhotoCard Component</h1> */}
             <PhotoCardImg photos={photos} />
-            <PhotoCardBody photos={photos} />
+            {/* <PhotoCardBody photos={photos} /> */}
         </div>
     )
 }

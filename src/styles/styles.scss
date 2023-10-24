@@ -4,19 +4,20 @@
 
 
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
-    
+
 }
 
 body {
     margin: 0;
     // Option 2
-     //background-color:#181818;
+    //background-color:#181818;
 
-     // Option 1
-     background-color:#2E2E2E;
+    // Option 1
+    background-color: #2E2E2E;
 }
+
 //////////////////////////////
 /// MODAL STYLING
 //////////////////////////////
@@ -28,13 +29,13 @@ body {
     top: 0;
     left: 0;
     background-color: rgba(91, 112, 131, 0.4);
-    backdrop-filter: blur(10px);    
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .modal {
+.modal {
     position: absolute;
     width: 40%;
     height: 60%;
@@ -42,11 +43,14 @@ body {
     border-radius: 50px;
     border: 5px solid black;
     height: 77%;
-  }
-  .modal input, .modal textarea {
+}
+
+.modal input,
+.modal textarea {
     color: black;
 }
-  .close-button {
+
+.close-button {
     position: absolute;
     background-color: #db5e34;
     color: white;
@@ -56,11 +60,11 @@ body {
     border: none;
     font-weight: bolder;
     font-size: 1rem;
-  }
+}
 
 .navbar {
     // Option 2
-    background-color:#242424;
+    background-color: #242424;
     // Option 1
     //background-color: #191970;
 
@@ -74,7 +78,7 @@ body {
     border-top: 5px solid white;
 }
 
-.site-title{
+.site-title {
     color: white;
     font-size: 50px;
 }
@@ -96,12 +100,11 @@ a {
     cursor: pointer;
 }
 
-
 .photosDiv {
     height: 60vh;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     margin: 20px;
     overflow: hidden;
 }
@@ -122,7 +125,3 @@ a {
     height: 100%;
     width: 100%;
 }
-
-
-
-

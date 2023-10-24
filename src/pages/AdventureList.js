@@ -12,7 +12,7 @@ const cookies = new Cookies();
 
 const AdventureList = () => {
   return (
-    <>
+    <div className="adventureList">
       <h1>Adventure List Page</h1>
 
       {/* Upload Photo button needs to be moved into the view adventure modal */}
@@ -28,7 +28,7 @@ const AdventureList = () => {
           </Modal>
         )} */}
       </div>
-    </>
+    </div>
   );
 };
 

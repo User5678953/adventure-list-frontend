@@ -4,7 +4,7 @@ import PhotosCarousel from "./PhotosCarousel"
 
 const UserUpperDiv = () => {
     return (
-        <div className="user-upper-div">
+        <div className="userUpperDiv">
             <h1>User Upper Div Component</h1>
             <AdventureList />
             <PhotosCarousel />
