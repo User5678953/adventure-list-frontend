@@ -15,8 +15,6 @@ const AdventureList = () => {
     <>
       <h1>Adventure List Page</h1>
 
-      {/* Upload Photo button needs to be moved into the view adventure modal */}
-
       <div>
         {/* Button to trigger photo upload modal */}
         <button onClick={() => setShowUploadModal(true)}>Upload Photo</button>

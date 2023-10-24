@@ -50,13 +50,18 @@ body {
     position: absolute;
     background-color: #db5e34;
     color: white;
-    border-radius: 5px;
-    top: -31px;
+    border-radius: 10px;
+    border-top-right-radius: 50px;
+    top: -30px;
     right: -1px;
     border: none;
     font-weight: bolder;
     font-size: 1rem;
   }
+  .close-button:hover {
+    background-color: #ff0000;
+}
+
 
 .navbar {
     // Option 2
@@ -113,15 +118,6 @@ a {
 }
 
 
-.mapDiv {
-    height: 50vh;
-    margin: 10px;
-}
-
-.mapImg {
-    height: 100%;
-    width: 100%;
-}
 
 
 
