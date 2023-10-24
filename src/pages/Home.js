@@ -20,6 +20,7 @@ import React from 'react'
 
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
+import UserUpperDiv from "../components/UserUpperDiv";
 
 const cookies = new Cookies()
 
@@ -48,7 +49,7 @@ const Home = () => {
               path="/"
               element={
                 <>
-                  <PhotosDiv />
+                  <UserUpperDiv />
                   <AdventureCarousel /> {/*shown when logged in*/}
                   {/* <MapBoard /> */}  {/*only shown when user logged out*/}
                 </>
@@ -78,7 +79,6 @@ const Home = () => {
               element={
                 <>
                   <PhotosDiv />
-                  {/* <AdventureCarousel /> shown when logged in */}
                   {/* <MapBoard />   only shown when user logged out */}
                 </>
               }
