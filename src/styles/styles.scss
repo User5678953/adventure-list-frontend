@@ -1,14 +1,16 @@
 * {
     color: #EAEAEA;
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
-    
+
 }
+
 body {
     margin: 0;
-     background-color:#2E2E2E;
+    background-color: #2E2E2E;
 }
+
 //////////////////////////////
 /// MODAL STYLING
 //////////////////////////////
@@ -19,12 +21,13 @@ body {
     top: 0;
     left: 0;
     background-color: rgba(91, 112, 131, 0.4);
-    backdrop-filter: blur(10px);    
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .modal {
+}
+
+.modal {
     position: absolute;
     width: 40%;
     height: 60%;
@@ -32,11 +35,14 @@ body {
     border-radius: 50px;
     border: 5px solid black;
     height: 77%;
-  }
-  .modal input, .modal textarea {
+}
+
+.modal input,
+.modal textarea {
     color: black;
 }
-  .close-button {
+
+.close-button {
     position: absolute;
     background-color: #db5e34;
     color: white;
@@ -47,12 +53,14 @@ body {
     border: none;
     font-weight: bolder;
     font-size: 1rem;
-  }
-  .close-button:hover {
+}
+
+.close-button:hover {
     background-color: #ff0000;
 }
+
 .navbar {
-    background-color:#242424;
+    background-color: #242424;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -63,10 +71,12 @@ body {
     border-top: 5px solid white;
     margin-bottom: 10px;
 }
-.site-title{
+
+.site-title {
     color: white;
     font-size: 50px;
 }
+
 .navbar ul {
     padding: 0;
     margin: 0;
@@ -74,73 +84,92 @@ body {
     display: flex;
     gap: 1rem;
 }
+
 .navbar a {
     color: white;
     text-decoration: none;
 }
+
 a {
     cursor: pointer;
 }
+
 .photosDiv {
-    height: 50vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     border-radius: 50px;
     margin: 20px;
     overflow: hidden;
 }
+
 .homeContent {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     margin-bottom: 10px;
+    height: 60vh;
+    width: 100vw;
 }
-.homeContent > div {
-    flex: 1; 
+
+.homeContent>div {
+    flex: 1;
     border: 5px solid #EAEAEA;
     border-radius: 50px;
-    box-sizing: border-box; 
-    padding: 2px; 
-    margin: 0 10px; 
+    box-sizing: border-box;
+    padding: 2px;
+    margin: 0 10px;
 }
-.homeContent > div:first-child {
-    margin-left: 0; 
+
+.homeContent>div:first-child {
+    margin-left: 0;
     border-radius: 50px;
 }
-.homeContent > div:last-child {
+
+.homeContent>div:last-child {
     margin-right: 0;
     border-radius: 50px;
 }
+
 .photo-carousel {
-    height: 50vh;
     display: flex;
-    justify-content: center;
-    align-items: center; 
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 50%;
     border-radius: 50px;
-    margin: 20px;
     overflow: hidden;
+    background-color: #454444;
 }
+
 .adventure-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
     height: 100%;
+    width: 50%;
     border-radius: 50px;
+    background-color: #454444;
 }
+
 .button-container {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     padding: 10px;
     gap: 30px;
 }
+
 .adventure-carousel {
-    height: 30vh;
+    height: 50vh;
     border: 5px solid #EAEAEA;
     border-radius: 50px;
     box-sizing: border-box;
+    overflow: hidden;
+    background-color: #454444;
 }
+
 .advent-button {
     background-color: #3498db;
     color: white;
@@ -148,20 +177,24 @@ a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 330px;
 }
+
 .advent-button-left {
-    margin-left:30px;
+    margin-left: 30px;
 }
+
 .advent-button-delete {
     background-color: #db5e34;
 }
+
 .advent-button-delete:hover {
     background-color: #ff0000;
 }
+
 .advent-button-color {
     background-color: #41ab6d;
+
     &:hover {
-        background-color: #27AE60; 
+        background-color: #27AE60;
     }
 }

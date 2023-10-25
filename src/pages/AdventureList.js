@@ -28,7 +28,7 @@ const AdventureList = () => {
   return (
     <>
       <div className="adventure-list">
-        <h1>Adventure List Page</h1>
+        {/* <h1>Adventure List Page</h1> */}
         <h2>Adventure Title</h2>
         <p>Description: Adventure Description</p>
         <p>Date Created: Date</p>
@@ -46,7 +46,7 @@ const AdventureList = () => {
             Add Photo
           </button>
         </div>
-        
+
         {/* Conditional rendering of the modal with PhotoUploadForm */}
         {showUploadModal && (
           <Modal onClose={() => setShowUploadModal(false)}>
