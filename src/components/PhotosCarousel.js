@@ -16,7 +16,7 @@ import advTestData from './adventureCards/TestAdvData'
 const PhotosCarousel = () => {
     return (
         <div className="photo-carousel">
-            <h1>Photos Carousel Component</h1>
+            {/* <h1>Photos Carousel Component</h1> */}
             <Carousel
                 additionalTransfrom={0}
                 arrows
