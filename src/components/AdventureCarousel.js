@@ -14,6 +14,7 @@ import advTestData from './adventureCards/TestAdvData'
 
 // IMPORT CARD STYLE
 import "../styles/cards.scss"
+import axios from "axios";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
@@ -27,7 +28,7 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 const AdventureCarousel = () => {
 
   // To render the adventures for the user
-  const [adventure, setAdventure] = useState([])
+  const [adventure, setAdventure] = useState(" ")
   // To transfer data when selecting the adventure in the carousel
   const [clickAdventure, setClickAdventure] = useState('Select or create an adventure.')
 
@@ -37,20 +38,30 @@ const AdventureCarousel = () => {
 
   console.log(clickAdventure)
 
-  const getAdventure = async () => {
-    const response = await fetch(`${backendURL}/adventureList`)
-    const data = await response.json()
-    setAdventure(data)
-  }
-
-  useEffect(() => {
-    getAdventure()
+  useEffect(()=> {
+    const fetchData = async () => {
+      const data = await axios.get('http://localhost:3000/adventureList')
+      console.log('adventure list ' + data)
+      setAdventure(data.data)
+    }
+    fetchData()
   }, [])
+
+  // const getAdventure = async () => {
+  //   const response = await fetch(`${backendURL}/adventureList`)
+  //   const data = await response.json()
+  //   setAdventure(data)
+  // }
+
+  // useEffect(() => {
+  //   getAdventure()
+  // }, [])
 
   console.log(adventure)
 
   return (
     <>
+    
       <div className="adventure-carousel">
         {/* <h1>Adventure Carousel Component</h1> */}
         <Carousel
@@ -109,13 +120,29 @@ const AdventureCarousel = () => {
 
           {/* use 'adventure' for live data */}
           {/* {adventure.map((adventure, i) => {
-              return (<AdvCard {...adventure} key={i} selectAdventure={selectAdventure}/>)
+              return (<AdvCard
+                title={adventure.title}
+                description={adventure.description}
+                location={adventure.location}
+                owner={adventure.owner}
+                {...adventure} key={i} selectAdventure={selectAdventure}/>)
             })} */}
 
+          {
+            adventure.map((advent) => (
+              <AdvCard 
+                title={advent.title}
+                description={advent.description}
+                location={advent.location}
+                owner={advent.owner}
+                />
+            ))
+          }
+
           {/* use 'advTestData' for local test dataset */}
-          {advTestData.map((adventure, i) => {
+          {/* {advTestData.map((adventure, i) => {
             return (<AdvCard {...adventure} key={i} selectAdventure={selectAdventure} />)
-          })}
+          })} */}
 
         </Carousel>
       </div>
