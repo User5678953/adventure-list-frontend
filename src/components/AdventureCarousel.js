@@ -109,7 +109,7 @@ const AdventureCarousel = () => {
 
           {/* use 'adventure' for live data */}
           {/* {adventure.map((adventure, i) => {
-              return (<AdvCard {...adventure} key={i} />)
+              return (<AdvCard {...adventure} key={i} selectAdventure={selectAdventure}/>)
             })} */}
 
           {/* use 'advTestData' for local test dataset */}
