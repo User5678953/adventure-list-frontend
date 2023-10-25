@@ -75,10 +75,6 @@ const PhotosCarousel = () => {
                     return (<PhotoCardImg {...photos} key={i} />)
                 })}
 
-                {/* {advTestData.map((adventure, i) => {
-                    return (<PhotoCardImg photos={adventure.photos[i]} />)
-                })} */}
-
             </Carousel>
         </div>
     )
