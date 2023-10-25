@@ -9,8 +9,9 @@ import React from 'react'
 
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
+
 import AdventureList from "./AdventureList";
-import PhotosView from '../pages/PhotosView'
+import PhotosCarousel from "../components/PhotosCarousel"
 
 
 const cookies = new Cookies()
@@ -31,7 +32,7 @@ const Home = () => {
                 <>
                   <div className="homeContent">
                     <AdventureList /> {/* Left */}
-                    <PhotosView/> {/* Right */}
+                    <PhotosCarousel />{/* Right */}
                   </div>
                   <AdventureCarousel /> {/* Below */}
                 </>
@@ -42,7 +43,6 @@ const Home = () => {
               element={
                 <>
                   <Modal />
-                  {/* <Login />  */}
                 </>
               }
             />
