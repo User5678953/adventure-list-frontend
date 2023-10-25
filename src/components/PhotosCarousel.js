@@ -71,9 +71,13 @@ const PhotosCarousel = () => {
                 swipeable
             >
 
-                {advTestData.map((adventure, i) => {
-                    return (<PhotoCardImg photos={adventure.photos[i]} />)
+                {advTestData[2].photos.map((photos, i) => {
+                    return (<PhotoCardImg {...photos} key={i} />)
                 })}
+
+                {/* {advTestData.map((adventure, i) => {
+                    return (<PhotoCardImg photos={adventure.photos[i]} />)
+                })} */}
 
             </Carousel>
         </div>
