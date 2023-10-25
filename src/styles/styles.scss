@@ -1,27 +1,17 @@
 * {
-
     color: #EAEAEA;
-
-
     text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
-
+    
 }
-
 body {
     margin: 0;
-    // Option 2
-    //background-color:#181818;
-
-    // Option 1
-    background-color: #2E2E2E;
+     background-color:#2E2E2E;
 }
-
 //////////////////////////////
 /// MODAL STYLING
 //////////////////////////////
-
 .modalDiv {
     width: 100vw;
     height: 100vh;
@@ -29,13 +19,12 @@ body {
     top: 0;
     left: 0;
     background-color: rgba(91, 112, 131, 0.4);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);    
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.modal {
+  }
+  .modal {
     position: absolute;
     width: 40%;
     height: 60%;
@@ -43,46 +32,41 @@ body {
     border-radius: 50px;
     border: 5px solid black;
     height: 77%;
-}
-
-.modal input,
-.modal textarea {
+  }
+  .modal input, .modal textarea {
     color: black;
 }
-
-.close-button {
+  .close-button {
     position: absolute;
     background-color: #db5e34;
     color: white;
-    border-radius: 5px;
-    top: -31px;
+    border-radius: 10px;
+    border-top-right-radius: 50px;
+    top: -30px;
     right: -1px;
     border: none;
     font-weight: bolder;
     font-size: 1rem;
+  }
+  .close-button:hover {
+    background-color: #ff0000;
 }
-
 .navbar {
-    // Option 2
-    background-color: #242424;
-    // Option 1
-    //background-color: #191970;
-
+    background-color:#242424;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-    border-bottom: 5px solid white;
+    border-bottom: 1px solid white;
     border-top: 5px solid white;
+    margin-bottom: 10px;
 }
-
-.site-title {
+.site-title{
     color: white;
     font-size: 50px;
 }
-
 .navbar ul {
     padding: 0;
     margin: 0;
@@ -90,38 +74,94 @@ body {
     display: flex;
     gap: 1rem;
 }
-
 .navbar a {
     color: white;
     text-decoration: none;
 }
-
 a {
     cursor: pointer;
 }
-
 .photosDiv {
-    height: 60vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    border-radius: 50px;
     margin: 20px;
     overflow: hidden;
 }
-
-.photosDivImg {
-    height: calc(100% - 6px);
-    max-width: 100%;
-    border-radius: 30px;
+.homeContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 10px;
 }
-
-
-.mapDiv {
+.homeContent > div {
+    flex: 1; 
+    border: 5px solid #EAEAEA;
+    border-radius: 50px;
+    box-sizing: border-box; 
+    padding: 2px; 
+    margin: 0 10px; 
+}
+.homeContent > div:first-child {
+    margin-left: 0; 
+    border-radius: 50px;
+}
+.homeContent > div:last-child {
+    margin-right: 0;
+    border-radius: 50px;
+}
+.photo-carousel {
     height: 50vh;
-    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 50px;
+    margin: 20px;
+    overflow: hidden;
 }
-
-.mapImg {
+.adventure-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     height: 100%;
-    width: 100%;
+    border-radius: 50px;
+}
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
+}
+.adventure-carousel {
+    height: 30vh;
+    border: 5px solid #EAEAEA;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+.advent-button {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 330px;
+}
+.advent-button-left {
+    margin-left:30px;
+}
+.advent-button-delete {
+    background-color: #db5e34;
+}
+.advent-button-delete:hover {
+    background-color: #ff0000;
+}
+.advent-button-color {
+    background-color: #41ab6d;
+    &:hover {
+        background-color: #27AE60; 
+    }
 }
