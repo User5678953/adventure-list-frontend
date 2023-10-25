@@ -1,14 +1,27 @@
-.adventures, .photos {
-    display: flex;
-    align-items: center;
-  }
-  
-  .adventures, .adventure, .photos, .photo {
-    margin: 0 10px;
-  }
-  
-  .adventure-card-img, .photo-card-img {
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
+.adventures,
+.photos-carousel {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.adventures,
+.adventure {
+  margin: 0 10px;
+  padding: 0;
+  height: 80%;
+  // border: 2px solid #EAEAEA;
+  justify-content: center;
+}
+
+
+.adventure-card-img {
+  width: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.photo-card-img {
+  width: 100%;
+  object-fit: cover;
+}
