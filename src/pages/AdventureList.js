@@ -15,8 +15,8 @@ const AdventureList = () => {
   return (
     <>
       <div className="button-container">
-        {/*<h2>{adventure.title}</h2>
-        <p>{adventure.description}</p>*/}
+        <h2>adventure.title</h2>
+        <p>adventure.description</p>
         <button className="advent-button advent-button-left">Edit</button>
         <button className="advent-button advent-button-delete">Delete</button>
         <button className="advent-button advent-button-color">Add Photo</button>
