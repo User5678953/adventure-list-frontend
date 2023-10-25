@@ -11,10 +11,6 @@
 
 body {
     margin: 0;
-    // Option 2
-     //background-color:#181818;
-
-     // Option 1
      background-color:#2E2E2E;
 }
 //////////////////////////////
@@ -50,28 +46,29 @@ body {
     position: absolute;
     background-color: #db5e34;
     color: white;
-    border-radius: 5px;
-    top: -31px;
+    border-radius: 10px;
+    border-top-right-radius: 50px;
+    top: -30px;
     right: -1px;
     border: none;
     font-weight: bolder;
     font-size: 1rem;
   }
+  .close-button:hover {
+    background-color: #ff0000;
+}
 
 .navbar {
-    // Option 2
     background-color:#242424;
-    // Option 1
-    //background-color: #191970;
-
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-    border-bottom: 5px solid white;
+    border-bottom: 1px solid white;
     border-top: 5px solid white;
+    margin-bottom: 10px;
 }
 
 .site-title{
@@ -96,33 +93,88 @@ a {
     cursor: pointer;
 }
 
-
 .photosDiv {
-    height: 60vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center; 
+    border-radius: 50px;
     margin: 20px;
     overflow: hidden;
 }
 
-.photosDivImg {
-    height: calc(100% - 6px);
-    max-width: 100%;
-    border-radius: 30px;
+.homeContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 10px;
 }
 
-
-.mapDiv {
-    height: 50vh;
-    margin: 10px;
+.homeContent > div {
+    flex: 1; 
+    border: 5px solid #EAEAEA;
+    border-radius: 50px;
+    box-sizing: border-box; 
+    padding: 2px; 
+    margin: 0 10px; 
 }
-
-.mapImg {
+.homeContent > div:first-child {
+    margin-left: 0; 
+    border-radius: 50px;
+}
+.homeContent > div:last-child {
+    margin-right: 0;
+    border-radius: 50px;
+}
+.adventure-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     height: 100%;
-    width: 100%;
+    border-radius: 50px;
 }
 
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
+}
+
+.adventure-carousel {
+    height: 30vh;
+    border: 5px solid #EAEAEA;
+    border-radius: 50px;
+    box-sizing: border-box;
+
+}
+
+.advent-button {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 330px;
+}
+.advent-button-left {
+    margin-left:30px;
+}
+.advent-button-delete {
+    background-color: #db5e34;
+}
+.advent-button-delete:hover {
+    background-color: #ff0000;
+}
+.advent-button-color {
+    background-color: #41ab6d;
+    &:hover {
+        background-color: #27AE60; 
+    }
+}
 
 
 

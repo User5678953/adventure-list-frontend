@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-import Modal from "../components/Modal";
 import Register from "./Register";
 const cookies = new Cookies();
 
@@ -12,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   // Use State for Register
-  const [showRegister, setRegister] = useState(false);
+  const [formType, setFormType] = useState("login");
 
   const move = useNavigate();
 
@@ -42,6 +41,7 @@ const Login = () => {
 
   return (
     <div className="form-fill-modal">
+      {formType === 'login' ? (
       <form action="POST" ClassName="form-background">
         <h1>Login</h1>
         <label>Username:</label>
@@ -68,16 +68,14 @@ const Login = () => {
         <h3>New to adventuring?</h3>
         <button
           type="submit"
-          onClick={() => setRegister(true)}
+          onClick={() => setFormType('register')}
           className="submit create-account-btn"
         >
           Create an account
         </button>
-      </form>
-      {showRegister && (
-        <Modal onClose={() => setRegister(false)}>
+        </form>
+         ) : (
           <Register />
-        </Modal>
       )}
     </div>
   );
