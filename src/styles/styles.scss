@@ -123,36 +123,24 @@ a {
     margin: 0 10px;
 }
 
-.homeContent>div:first-child {
+.homeContent>div:first-child, .homeContent>div:last-child  {
     margin-left: 0;
+    padding: 0;
     border-radius: 50px;
 }
 
-.homeContent>div:last-child {
-    margin-right: 0;
-    border-radius: 50px;
-}
-
-.photo-carousel {
+.photo-carousel, .adventure-list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 0;
     height: 100%;
-    width: 50%;
+    width: 100%;
     border-radius: 50px;
     overflow: hidden;
     background-color: #454444;
 }
 
-.adventure-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 50%;
-    border-radius: 50px;
-    background-color: #454444;
-}
 
 .button-container {
     display: flex;

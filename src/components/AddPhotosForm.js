@@ -29,7 +29,7 @@ const handleUpload = async (event) => {
       tags: tags,
     };
 
-    const response = await fetch(`http://localhost:3000/photos/upload`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/photos/upload`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
