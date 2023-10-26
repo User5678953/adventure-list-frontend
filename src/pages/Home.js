@@ -1,19 +1,13 @@
 
 import Cookies from "universal-cookie";
 import { Routes, Route } from 'react-router-dom'
-
-import AdventureCarousel from "../components/AdventureCarousel"
 import { useState } from "react";
-
-
+import AdventureCarousel from "../components/AdventureCarousel"
 import React from 'react'
-
 import PhotosDiv from '../components/PhotosDiv'
 import Modal from '../components/Modal'
-
 import AdventureList from "./AdventureList";
 import PhotosCarousel from "../components/PhotosCarousel"
-
 
 const cookies = new Cookies()
 
@@ -21,7 +15,8 @@ const cookies = new Cookies()
 const Home = () => {
 
      // token verifaction for user
-     const token = cookies.get("TOKEN");
+  const token = cookies.get("TOKEN");
+  const [selectedAdventureId, setSelectedAdventureId] = useState(null);
 
      const loggedIn = () => {
       return (
@@ -32,10 +27,14 @@ const Home = () => {
               element={
                 <>
                   <div className="homeContent">
-                    <AdventureList /> {/* Left */}
-                    <PhotosCarousel />{/* Right */}
+                    <AdventureList id={selectedAdventureId} />
+                    <PhotosCarousel />
                   </div>
-                  <AdventureCarousel /> {/* Below */}
+                
+                  <AdventureCarousel
+                    selectAdventure={setSelectedAdventureId}
+                  />{" "}
+                  {/* Below */}
                 </>
               }
             />

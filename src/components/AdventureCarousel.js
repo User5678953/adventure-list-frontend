@@ -25,17 +25,14 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
  * 2) MAP the data into the function
  * 
  */
-const AdventureCarousel = () => {
+const AdventureCarousel = ({ selectAdventure }) => {
 
   // To render the adventures for the user
   const [adventure, setAdventure] = useState([])
   // To transfer data when selecting the adventure in the carousel
   const [clickAdventure, setClickAdventure] = useState('Select or create an adventure.')
 
-  const selectAdventure = (clickAdventure) => {
-    setClickAdventure(clickAdventure)
-  }
-
+  
   console.log(clickAdventure)
 
   useEffect(()=> {
@@ -52,7 +49,6 @@ const AdventureCarousel = () => {
 
   return (
     <>
-    
       <div className="adventure-carousel">
         {/* <h1>Adventure Carousel Component</h1> */}
         <Carousel
@@ -77,27 +73,27 @@ const AdventureCarousel = () => {
             desktop: {
               breakpoint: {
                 max: 3000,
-                min: 1024
+                min: 1024,
               },
               items: 3,
-              partialVisibilityGutter: 40
+              partialVisibilityGutter: 40,
             },
             mobile: {
               breakpoint: {
                 max: 464,
-                min: 0
+                min: 0,
               },
               items: 1,
-              partialVisibilityGutter: 30
+              partialVisibilityGutter: 30,
             },
             tablet: {
               breakpoint: {
                 max: 1024,
-                min: 464
+                min: 464,
               },
               items: 2,
-              partialVisibilityGutter: 30
-            }
+              partialVisibilityGutter: 30,
+            },
           }}
           rewind={false}
           rewindWithAnimation={false}
@@ -108,7 +104,6 @@ const AdventureCarousel = () => {
           slidesToSlide={1}
           swipeable
         >
-
           {
             adventure?.map((advent) => {
               return (
@@ -124,11 +119,7 @@ const AdventureCarousel = () => {
               })
           }
 
-          {/* use 'advTestData' for local test dataset */}
-          {/* {advTestData.map((adventure, i) => {
-            return (<AdvCard {...adventure} key={i} selectAdventure={selectAdventure} />)
-          })} */}
-
+       
         </Carousel>
       </div>
     </>
