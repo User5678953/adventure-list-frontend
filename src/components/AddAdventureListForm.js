@@ -60,7 +60,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
 
         console.log(successMessage);
         onClose();
-        alert(successMessage);
+        // alert(successMessage);
       } else {
         const errorData = await response.json();
         console.error("Error creating adventure:", errorData);
