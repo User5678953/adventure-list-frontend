@@ -113,6 +113,7 @@ const AdventureCarousel = () => {
             adventure?.map((advent) => {
               return (
               <AdvCard 
+                id={advent._id}
                 title={advent.title}
                 description={advent.description}
                 location={advent.location}
