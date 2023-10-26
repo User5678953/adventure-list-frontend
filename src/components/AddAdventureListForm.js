@@ -1,19 +1,34 @@
 import React, { useState } from "react";
 import "../styles/form.scss";
 
-// Setting up state for each input field
-function AddAdventureListForm({ onClose }) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [location, setLocation] = useState("");
-  const [completed, setCompleted] = useState(false);
-  const [tags, setTags] = useState("");
-  const [owner, setOwner] = useState("");
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
+function AddAdventureListForm({ adventure = null, onClose }) {
+
+  console.log("THIS IS ADVENTURE", adventure);
+
+
+  const isEditMode = adventure !== null;
+
+  const [title, setTitle] = useState(adventure ? adventure.title : "");
+  
+  const [description, setDescription] = useState(
+    adventure ? adventure.description : ""
+  );
+
+  const [location, setLocation] = useState(adventure ? adventure.location : "");
+
+  const [completed, setCompleted] = useState(
+    adventure ? adventure.completed : false
+  );
+
+  const [tags, setTags] = useState(adventure ? adventure.tags : "");
+
+  const [owner, setOwner] = useState(adventure ? adventure.owner : "");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // adventure data
     const adventureData = {
       title,
       description,
@@ -23,33 +38,34 @@ function AddAdventureListForm({ onClose }) {
       owner,
     };
 
-    // TODO: Send the adventureData to the backend to save in the database.
+    const method = isEditMode ? "PUT" : "POST";
+
+    const endpoint = isEditMode
+      ? `${backendURL}/adventureList/${adventure._id}`
+      : `${backendURL}/adventureList`;
+
     try {
-      const response = await fetch(
-        `http://localhost:3000/adventureList`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(adventureData),
-        }
-      );
+      const response = await fetch(endpoint, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(adventureData),
+      });
 
       if (response.ok) {
-        // Handle a successful response here (e.g., show a success message, redirect, etc.)
-        console.log("Adventure created successfully");
+        const successMessage = isEditMode
+          ? "Adventure updated successfully"
+          : "Adventure created successfully";
 
-        // Close the modal
+        console.log(successMessage);
         onClose();
-        alert("Adventure created successfully!");
+        // alert(successMessage);
       } else {
-        // Handle errors
         const errorData = await response.json();
         console.error("Error creating adventure:", errorData);
       }
     } catch (error) {
-      // Handle network  errors
       console.error("Error creating adventure:", error);
     }
   };
@@ -65,7 +81,6 @@ function AddAdventureListForm({ onClose }) {
           required
         />
       </div>
-
       <div className="form-background">
         <label>Description:</label>
         <textarea
@@ -74,16 +89,15 @@ function AddAdventureListForm({ onClose }) {
           required
         />
       </div>
-
       <div className="form-background">
         <label>Location:</label>
         <input
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
+          required
         />
       </div>
-
       <div className="form-background">
         <label>Tags:</label>
         <input
@@ -92,7 +106,6 @@ function AddAdventureListForm({ onClose }) {
           onChange={(e) => setTags(e.target.value)}
         />
       </div>
-
       <div className="form-background checkbox-container">
         <label>Completed:</label>
         <input
@@ -101,9 +114,16 @@ function AddAdventureListForm({ onClose }) {
           onChange={(e) => setCompleted(e.target.checked)}
         />
       </div>
-
+      <div className="form-background">
+        <label>Owner:</label>
+        <input
+          type="text"
+          value={owner}
+          onChange={(e) => setOwner(e.target.value)}
+        />
+      </div>
       <button type="submit" className="submit">
-        Add Adventure
+        {isEditMode ? "Update Adventure" : "Add Adventure"}
       </button>
     </form>
   );

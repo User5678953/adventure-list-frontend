@@ -1,6 +1,8 @@
 import React from "react"
-import AdvCard from "./adventureCards/AdvCard"
 import { useEffect, useState } from "react";
+import axios from "axios";
+
+import AdvCard from "./adventureCards/AdvCard"
 
 // IMPORT REACT-MULTI-CAROUSEL NPM PACKAGE
 // Documentation: https://react-multi-carousel.surge.sh/?selectedKind=Carousel&selectedStory=With%20infinite%20mode&full=0&addons=1&stories=1&panelRight=0&addonPanel=kadira%2Fjsx%2Fpanel
@@ -9,48 +11,31 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"
 
-// IMPORT TEST DATA
-import advTestData from './adventureCards/TestAdvData'
-
 // IMPORT CARD STYLE
 import "../styles/cards.scss"
-import axios from "axios";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
 
-/**
- * Need to create a fetch request to backend API to GET all adventures and display as individual cards.
- * 1) GET request
- * 2) MAP the data into the function
- * 
- */
 const AdventureCarousel = ({ selectAdventure }) => {
 
   // To render the adventures for the user
   const [adventure, setAdventure] = useState([])
-  // To transfer data when selecting the adventure in the carousel
-  const [clickAdventure, setClickAdventure] = useState('Select or create an adventure.')
 
-  
-  console.log(clickAdventure)
-
-  useEffect(()=> {
+  useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get(`${backendURL}/adventureList`)
-      console.log('adventure list ' + data)
+      // console.log('adventure list ' + data)
       setAdventure(data.data)
     }
     fetchData()
   }, [])
 
-
-  console.log(adventure)
+  // console.log(`Current state of Adventure on the AdvCarousel: ${adventure}`)
 
   return (
     <>
       <div className="adventure-carousel">
-        {/* <h1>Adventure Carousel Component</h1> */}
         <Carousel
           additionalTransfrom={0}
           arrows
@@ -107,19 +92,18 @@ const AdventureCarousel = ({ selectAdventure }) => {
           {
             adventure?.map((advent) => {
               return (
-              <AdvCard 
-                id={advent._id}
-                title={advent.title}
-                description={advent.description}
-                location={advent.location}
-                owner={advent.owner}
-                selectAdventure={selectAdventure}
+                <AdvCard
+                  description={advent.description}
+                  id={advent._id}
+                  location={advent.location}
+                  owner={advent.owner}
+                  photos={advent.photos}
+                  title={advent.title}
+                  selectAdventure={selectAdventure}
                 />
               )
-              })
+            })
           }
-
-       
         </Carousel>
       </div>
     </>

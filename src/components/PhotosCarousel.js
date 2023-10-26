@@ -11,7 +11,7 @@ import "react-multi-carousel/lib/styles.css"
 import "../styles/cards.scss"
 
 // IMPORT TEST DATA
-import advTestData from './adventureCards/TestAdvData'
+import advTestData from '../data/TestAdvData'
 
 const PhotosCarousel = () => {
     return (
