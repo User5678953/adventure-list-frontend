@@ -12,40 +12,49 @@ console.log("Backend URL:", backendURL);
 
 const cookies = new Cookies();
 
-const AdventureList = () => {
+const AdventureList = ({ id }) => {
   const [adventure, setAdventure] = useState(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
-  // fetch request
-  useEffect(() => {
 
-    fetch(`${backendURL}/adventureList/`)
-      .then((response) => response.json())
-      .then((data) => setAdventure(data))
-      .catch((error) => console.error("Error fetching adventure data:", error));
-  }, []);
+  // fetch request
+
+  useEffect(() => {
+    if (id) {
+      fetch(`${backendURL}/adventureList/${id}`)
+        .then((response) => response.json())
+        .then((data) => setAdventure(data))
+        .catch((error) =>
+          console.error("Error fetching adventure data:", error)
+        );
+    }
+  }, [id]);
 
   return (
     <>
       <div className="adventure-list">
-        {/* <h1>Adventure List Page</h1> */}
-        <h2>Adventure Title</h2>
-        <p>Description: Adventure Description</p>
-        <p>Date Created: Date</p>
-        <p>Location: Location</p>
-        <p>Completed: Yes/No</p>
-        <p>Tags: Tags</p>
-        <p>Co-Owners: Co-Owner Names</p>
-        <div className="button-container">
-          <button className="advent-button advent-button-left">Edit</button>
-          <button className="advent-button advent-button-delete">Delete</button>
-          <button
-            className="advent-button advent-button-color"
-            onClick={() => setShowUploadModal(true)}
-          >
-            Add Photo
-          </button>
-        </div>
+        {adventure ? (
+          <>
+            <h2>{adventure.title}</h2>
+            <p>Description: {adventure.description}</p>
+            <p>Date Created: {adventure.dateCreated}</p>
+            <p>Location: {adventure.location}</p>
+            <p>Completed: {adventure.completed ? "Yes" : "No"}</p>
+            <p>Tags: {adventure.tags}</p>
+            <div className="button-container">
+              <button className="advent-button advent-button-left">Edit</button>
+              <button className="advent-button advent-button-delete">Delete</button>
+              <button
+                className="advent-button advent-button-color"
+                onClick={() => setShowUploadModal(true)}
+              >
+                Add Photo
+              </button>
+            </div>
+          </>
+        ) : (
+          <p>Select an Adventure below or add one! Get Adventuring already!</p>
+        )}
 
         {/* Conditional rendering of the modal with PhotoUploadForm */}
         {showUploadModal && (
@@ -56,5 +65,5 @@ const AdventureList = () => {
       </div>
     </>
   );
-};
+}
 export default AdventureList;
