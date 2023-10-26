@@ -39,7 +39,7 @@ const handleUpload = async (event) => {
 
     const data = await response.json();
     console.log(data);
-    onclose()
+    onClose()
   } catch (error) {
     console.error("There was an error uploading the photo", error);
   }

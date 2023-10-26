@@ -37,9 +37,13 @@ const AdventureList = ({ id }) => {
     setShowEditModal(true);
   };
 
-   // Handler to close the edit mode
+  // Handler to close the edit mode
   const handleEditClose = () => {
     setShowEditModal(false);
+  };
+  // Handler to close the edit form
+  const handleCloseFunction = () => {
+    setShowUploadModal(false);
   };
 
   return (
@@ -84,11 +88,10 @@ const AdventureList = ({ id }) => {
             />
           </Modal>
         )}
-
         {/* Conditional rendering of the modal with PhotoUploadForm */}
         {showUploadModal && (
-          <Modal onClose={() => setShowUploadModal(false)}>
-            <PhotoUploadForm />
+          <Modal onClose={handleCloseFunction}>
+            <PhotoUploadForm onClose={handleCloseFunction} />
           </Modal>
         )}
       </div>
