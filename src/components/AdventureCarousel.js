@@ -40,7 +40,7 @@ const AdventureCarousel = () => {
 
   useEffect(()=> {
     const fetchData = async () => {
-      const data = await axios.get('http://localhost:3000/adventureList')
+      const data = await axios.get(`${backendURL}/adventureList`)
       console.log('adventure list ' + data)
       setAdventure(data.data)
     }
