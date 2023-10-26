@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +18,7 @@ const Register = () => {
 
     try {
       await axios
-        .post("http://localhost:3000/register", {
+        .post(`${backendURL}/register`, {
           username,
           password,
         })

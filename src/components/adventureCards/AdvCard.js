@@ -1,18 +1,12 @@
 import React from "react"
-import { useState } from "react"
 import AdvCardBody from "./AdvCardBody"
 import AdvCardImg from "./AdvCardImg"
 
-const AdvCard = ({_id, title, location, photos, selectAdventure}) => {
-
-    // const [adventureClick, setAdventureClick] = useState(null)
-
-    // console.log(adventureClick)
+const AdvCard = ({id, title, location, photos, selectAdventure}) => {
 
     return (
-        <div className="adventure" onClick={() => selectAdventure(_id)} >
-            {/* <h1>Adventure Card Component</h1> */}
-            <AdvCardImg photos={photos} />
+        <div className="adventure" onClick={() => selectAdventure(id)} >
+            {/* <AdvCardImg photos={photos} /> */}
             <AdvCardBody title={title} location={location} />
         </div>
     )
