@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 
 // IMPORT RANDOM PHOTOS DATA
-import randPic from '../RandPhotosData'
+import randPic from '../data/RandPhotosData'
 
 const PhotosDiv = () => {
     // image changer functionality from: 

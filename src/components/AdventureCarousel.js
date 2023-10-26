@@ -9,9 +9,6 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"
 
-// IMPORT TEST DATA
-import advTestData from './adventureCards/TestAdvData'
-
 // IMPORT CARD STYLE
 import "../styles/cards.scss"
 import axios from "axios";
@@ -28,7 +25,7 @@ const AdventureCarousel = ({ selectAdventure }) => {
 
   console.log(clickAdventure)
 
-  useEffect(()=> {
+  useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get(`${backendURL}/adventureList`)
       console.log('adventure list ' + data)
@@ -42,7 +39,6 @@ const AdventureCarousel = ({ selectAdventure }) => {
   return (
     <>
       <div className="adventure-carousel">
-        {/* <h1>Adventure Carousel Component</h1> */}
         <Carousel
           additionalTransfrom={0}
           arrows
@@ -99,20 +95,18 @@ const AdventureCarousel = ({ selectAdventure }) => {
           {
             adventure?.map((advent) => {
               return (
-              <AdvCard 
-                description={advent.description}
-                id={advent._id}
-                location={advent.location}
-                owner={advent.owner}
-                photos={advent.photos}
-                title={advent.title}
-                selectAdventure={selectAdventure}
+                <AdvCard
+                  description={advent.description}
+                  id={advent._id}
+                  location={advent.location}
+                  owner={advent.owner}
+                  photos={advent.photos}
+                  title={advent.title}
+                  selectAdventure={selectAdventure}
                 />
               )
-              })
+            })
           }
-
-       
         </Carousel>
       </div>
     </>
