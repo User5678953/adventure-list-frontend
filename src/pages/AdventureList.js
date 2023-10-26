@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import AddAdventureListForm from "../components/AddAdventureListForm";
 import Modal from "../components/Modal";
@@ -15,6 +16,8 @@ const AdventureList = ({ id }) => {
   const [adventure, setAdventure] = useState(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+
+  const navigate = useNavigate()
 
   // fetch request
   useEffect(() => {
@@ -43,6 +46,27 @@ const AdventureList = ({ id }) => {
     setShowUploadModal(false);
   };
 
+  const getAdventure = async () => {
+    const response = await fetch(backendURL)
+    const data = await response.json()
+    setAdventure(data)
+  }
+
+  // this is what the route should look like for delete.
+  // console.log(backendURL + '/adventureList/' + id)
+
+  const deleteAdventure = async (id) => {
+    await fetch(backendURL + '/adventureList/' + id, {
+      method: 'delete'
+    })
+    getAdventure()
+  }
+
+  const handleDelete = () => {
+    deleteAdventure(id)
+    navigate('/')
+  }
+
   return (
     <>
       <div className="adventure-list">
@@ -61,7 +85,10 @@ const AdventureList = ({ id }) => {
               >
                 Edit
               </button>
-              <button className="advent-button advent-button-delete">
+              <button 
+                className="advent-button advent-button-delete"
+                onClick={handleDelete}
+              >
                 Delete
               </button>
               <button
