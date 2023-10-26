@@ -8,7 +8,7 @@ console.log("Backend URL:", backendURL);
 
 
 
-function AddPhotoForm() {
+function AddPhotoForm({ onClose }) {
   // Setting up state for each input field
   const [imageURL, setImageURL] = useState("");
   const [description, setDescription] = useState("");
@@ -29,7 +29,7 @@ const handleUpload = async (event) => {
       tags: tags,
     };
 
-    const response = await fetch(`${backendURL}/photos/upload`, {
+    const response = await fetch(`http://localhost:3000/photos/upload`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,6 +39,7 @@ const handleUpload = async (event) => {
 
     const data = await response.json();
     console.log(data);
+    onclose()
   } catch (error) {
     console.error("There was an error uploading the photo", error);
   }

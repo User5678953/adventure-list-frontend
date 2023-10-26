@@ -14,6 +14,7 @@ import advTestData from './adventureCards/TestAdvData'
 
 // IMPORT CARD STYLE
 import "../styles/cards.scss"
+import axios from "axios";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
@@ -37,20 +38,21 @@ const AdventureCarousel = () => {
 
   console.log(clickAdventure)
 
-  const getAdventure = async () => {
-    const response = await fetch(`${backendURL}/adventureList`)
-    const data = await response.json()
-    setAdventure(data)
-  }
-
-  useEffect(() => {
-    getAdventure()
+  useEffect(()=> {
+    const fetchData = async () => {
+      const data = await axios.get('http://localhost:3000/adventureList')
+      console.log('adventure list ' + data)
+      setAdventure(data.data)
+    }
+    fetchData()
   }, [])
+
 
   console.log(adventure)
 
   return (
     <>
+    
       <div className="adventure-carousel">
         {/* <h1>Adventure Carousel Component</h1> */}
         <Carousel
@@ -107,15 +109,21 @@ const AdventureCarousel = () => {
           swipeable
         >
 
-          {/* use 'adventure' for live data */}
-          {/* {adventure.map((adventure, i) => {
-              return (<AdvCard {...adventure} key={i} selectAdventure={selectAdventure}/>)
-            })} */}
+          {
+            adventure?.map((advent) => (
+              <AdvCard 
+                title={advent.title}
+                description={advent.description}
+                location={advent.location}
+                owner={advent.owner}
+                />
+            ))
+          }
 
           {/* use 'advTestData' for local test dataset */}
-          {advTestData.map((adventure, i) => {
+          {/* {advTestData.map((adventure, i) => {
             return (<AdvCard {...adventure} key={i} selectAdventure={selectAdventure} />)
-          })}
+          })} */}
 
         </Carousel>
       </div>
