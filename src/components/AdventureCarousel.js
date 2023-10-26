@@ -28,7 +28,7 @@ const backendURL = process.env.REACT_APP_BACKEND_URL;
 const AdventureCarousel = () => {
 
   // To render the adventures for the user
-  const [adventure, setAdventure] = useState(" ")
+  const [adventure, setAdventure] = useState([])
   // To transfer data when selecting the adventure in the carousel
   const [clickAdventure, setClickAdventure] = useState('Select or create an adventure.')
 
@@ -47,15 +47,6 @@ const AdventureCarousel = () => {
     fetchData()
   }, [])
 
-  // const getAdventure = async () => {
-  //   const response = await fetch(`${backendURL}/adventureList`)
-  //   const data = await response.json()
-  //   setAdventure(data)
-  // }
-
-  // useEffect(() => {
-  //   getAdventure()
-  // }, [])
 
   console.log(adventure)
 
@@ -118,18 +109,8 @@ const AdventureCarousel = () => {
           swipeable
         >
 
-          {/* use 'adventure' for live data */}
-          {/* {adventure.map((adventure, i) => {
-              return (<AdvCard
-                title={adventure.title}
-                description={adventure.description}
-                location={adventure.location}
-                owner={adventure.owner}
-                {...adventure} key={i} selectAdventure={selectAdventure}/>)
-            })} */}
-
           {
-            adventure.map((advent) => (
+            adventure?.map((advent) => (
               <AdvCard 
                 title={advent.title}
                 description={advent.description}

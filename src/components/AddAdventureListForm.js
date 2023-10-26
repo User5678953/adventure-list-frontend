@@ -26,7 +26,7 @@ function AddAdventureListForm({ onClose }) {
     // TODO: Send the adventureData to the backend to save in the database.
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/adventureList`,
+        `http://localhost:3000/adventureList`,
         {
           method: "POST",
           headers: {
