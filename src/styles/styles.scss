@@ -3,7 +3,6 @@
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
-
 }
 
 body {
@@ -11,9 +10,15 @@ body {
     background-color: #2E2E2E;
 }
 
-//////////////////////////////
-/// MODAL STYLING
-//////////////////////////////
+a {
+    cursor: pointer;
+}
+
+.navbar a, .site-title {
+    color: white;
+    text-decoration: none;
+}
+
 .modalDiv {
     width: 100vw;
     height: 100vh;
@@ -25,21 +30,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+}
+
+.modal, .photo-carousel, .adventure-list {
+    border-radius: 50px;
+    background-color: #EAEAEA;
+    overflow: hidden;
 }
 
 .modal {
     position: absolute;
     width: 40%;
-    height: 60%;
-    background-color: #EAEAEA;
-    border-radius: 50px;
-    border: 5px solid black;
     height: 77%;
-    overflow: hidden;
+    border: 5px solid black;
 }
 
-.modal input,
-.modal textarea {
+.modal input, .modal textarea {
     color: black;
 }
 
@@ -73,7 +80,6 @@ body {
 }
 
 .site-title {
-    color: white;
     font-size: 50px;
 }
 
@@ -85,15 +91,6 @@ body {
     gap: 1rem;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-}
-
-a {
-    cursor: pointer;
-}
-
 .photosDiv {
     height: 80vh;
     display: flex;
@@ -101,56 +98,45 @@ a {
     align-items: center;
     border-radius: 50px;
     margin: 20px;
-    overflow: hidden;
 }
 
 .homeContent {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: stretch; 
     margin-bottom: 10px;
     height: 60vh;
     width: 100vw;
 }
 
-.homeContent>div {
+.homeContent > div {
     flex: 1;
+    display: flex; 
+    align-items: stretch;
     border: 5px solid #EAEAEA;
     border-radius: 50px;
     box-sizing: border-box;
     padding: 2px;
     margin: 0 10px;
-}
-
-.homeContent>div:first-child {
-    margin-left: 0;
-    border-radius: 50px;
-}
-
-.homeContent>div:last-child {
-    margin-right: 0;
-    border-radius: 50px;
-}
-
-.photo-carousel {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 50%;
-    border-radius: 50px;
     overflow: hidden;
-    background-color: #454444;
 }
 
-.adventure-list {
+.homeContent > div:first-child {
+    margin-left: 0;
+}
+
+.homeContent > div:last-child {
+    margin-right: 0;
+}
+
+.photo-carousel, .adventure-list {
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    width: 50%;
-    border-radius: 50px;
+    width: 50%; 
     background-color: #454444;
+    overflow: hidden;
 }
 
 .button-container {
@@ -162,11 +148,10 @@ a {
 }
 
 .adventure-carousel {
-    height: 50vh;
+    height: 4%;
     border: 5px solid #EAEAEA;
     border-radius: 50px;
     box-sizing: border-box;
-    overflow: hidden;
     background-color: #454444;
 }
 
@@ -176,7 +161,6 @@ a {
     padding: 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 .advent-button-left {
@@ -193,8 +177,8 @@ a {
 
 .advent-button-color {
     background-color: #41ab6d;
+}
 
-    &:hover {
-        background-color: #27AE60;
-    }
+.advent-button-color:hover {
+    background-color: #27AE60;
 }
