@@ -1,6 +1,8 @@
 import React from "react"
-import AdvCard from "./adventureCards/AdvCard"
 import { useEffect, useState } from "react";
+import axios from "axios";
+
+import AdvCard from "./adventureCards/AdvCard"
 
 // IMPORT REACT-MULTI-CAROUSEL NPM PACKAGE
 // Documentation: https://react-multi-carousel.surge.sh/?selectedKind=Carousel&selectedStory=With%20infinite%20mode&full=0&addons=1&stories=1&panelRight=0&addonPanel=kadira%2Fjsx%2Fpanel
@@ -11,7 +13,6 @@ import "react-multi-carousel/lib/styles.css"
 
 // IMPORT CARD STYLE
 import "../styles/cards.scss"
-import axios from "axios";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
@@ -20,21 +21,17 @@ const AdventureCarousel = ({ selectAdventure }) => {
 
   // To render the adventures for the user
   const [adventure, setAdventure] = useState([])
-  // To transfer data when selecting the adventure in the carousel
-  const [clickAdventure, setClickAdventure] = useState('Select or create an adventure.')
-
-  console.log(clickAdventure)
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get(`${backendURL}/adventureList`)
-      console.log('adventure list ' + data)
+      // console.log('adventure list ' + data)
       setAdventure(data.data)
     }
     fetchData()
   }, [])
 
-  console.log(adventure)
+  // console.log(`Current state of Adventure on the AdvCarousel: ${adventure}`)
 
   return (
     <>
