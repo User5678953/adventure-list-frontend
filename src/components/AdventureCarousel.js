@@ -110,14 +110,17 @@ const AdventureCarousel = () => {
         >
 
           {
-            adventure?.map((advent) => (
+            adventure?.map((advent) => {
+              return (
               <AdvCard 
                 title={advent.title}
                 description={advent.description}
                 location={advent.location}
                 owner={advent.owner}
+                selectAdventure={selectAdventure}
                 />
-            ))
+              )
+              })
           }
 
           {/* use 'advTestData' for local test dataset */}

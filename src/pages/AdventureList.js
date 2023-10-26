@@ -19,7 +19,7 @@ const AdventureList = () => {
   // fetch request
   useEffect(() => {
 
-    fetch(`${backendURL}/adventureList`)
+    fetch(`${backendURL}/adventureList/`)
       .then((response) => response.json())
       .then((data) => setAdventure(data))
       .catch((error) => console.error("Error fetching adventure data:", error));

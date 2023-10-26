@@ -6,6 +6,8 @@ import Cookies from "universal-cookie";
 import Register from "./Register";
 const cookies = new Cookies();
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,9 +20,10 @@ const Login = () => {
   async function submit(e) {
     e.preventDefault();
 
+
     try {
       const response = await axios
-        .post("http://localhost:3000/register/login", {
+        .post(`${backendURL}/register/login`, {
           username,
           password,
         })
