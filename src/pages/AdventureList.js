@@ -8,7 +8,7 @@ import PhotoUploadForm from "../components/AddPhotosForm";
 
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
-console.log("Backend URL:", backendURL);
+// console.log("Backend URL:", backendURL);
 
 const cookies = new Cookies();
 
@@ -62,6 +62,7 @@ const AdventureList = ({ id }) => {
     getAdventure()
   }
 
+  // Handle delete adventure
   const handleDelete = () => {
     deleteAdventure(id)
     navigate('/')

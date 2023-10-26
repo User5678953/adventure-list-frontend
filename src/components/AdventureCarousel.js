@@ -19,12 +19,6 @@ import axios from "axios";
 // Import backend Endpoint
 const backendURL = process.env.REACT_APP_BACKEND_URL;
 
-/**
- * Need to create a fetch request to backend API to GET all adventures and display as individual cards.
- * 1) GET request
- * 2) MAP the data into the function
- * 
- */
 const AdventureCarousel = ({ selectAdventure }) => {
 
   // To render the adventures for the user
@@ -32,7 +26,6 @@ const AdventureCarousel = ({ selectAdventure }) => {
   // To transfer data when selecting the adventure in the carousel
   const [clickAdventure, setClickAdventure] = useState('Select or create an adventure.')
 
-  
   console.log(clickAdventure)
 
   useEffect(()=> {
@@ -43,7 +36,6 @@ const AdventureCarousel = ({ selectAdventure }) => {
     }
     fetchData()
   }, [])
-
 
   console.log(adventure)
 
@@ -108,11 +100,12 @@ const AdventureCarousel = ({ selectAdventure }) => {
             adventure?.map((advent) => {
               return (
               <AdvCard 
-                id={advent._id}
-                title={advent.title}
                 description={advent.description}
+                id={advent._id}
                 location={advent.location}
                 owner={advent.owner}
+                photos={advent.photos}
+                title={advent.title}
                 selectAdventure={selectAdventure}
                 />
               )
