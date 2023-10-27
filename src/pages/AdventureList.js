@@ -60,6 +60,7 @@ const AdventureList = ({ id }) => {
       method: 'delete'
     })
     getAdventure()
+    window.location.reload()
   }
 
   // Handle delete adventure
@@ -67,6 +68,8 @@ const AdventureList = ({ id }) => {
     deleteAdventure(id)
     navigate('/')
   }
+
+
 
   return (
     <>
@@ -101,7 +104,7 @@ const AdventureList = ({ id }) => {
             </div>
           </>
         ) : (
-          <p>Select an Adventure below or add one! Get Adventuring already!</p>
+          <h3>Select an Adventure below or add one! <br/> Get Adventuring already!</h3>
         )}
 
         {/* Conditional rendering of the edit modal with AddAdventureListForm */}

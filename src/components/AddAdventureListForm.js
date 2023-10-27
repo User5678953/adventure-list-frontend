@@ -13,7 +13,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
   const [title, setTitle] = useState(adventure ? adventure.title : "");
 
   // const [coverPhoto, setCoverPhoto] = useState(adventure ? adventure.coverPhoto : "");
-  
+
   const [description, setDescription] = useState(adventure ? adventure.description : "");
 
   const [location, setLocation] = useState(adventure ? adventure.location : "");
@@ -58,6 +58,8 @@ function AddAdventureListForm({ adventure = null, onClose }) {
           : "Adventure created successfully";
 
         console.log(successMessage);
+
+        window.location.reload()
         onClose();
         // alert(successMessage);
       } else {
@@ -68,7 +70,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
       console.error("Error creating adventure:", error);
     }
   };
-  
+
 
   return (
     <form onSubmit={handleSubmit}>

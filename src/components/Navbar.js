@@ -62,7 +62,7 @@ const Navbar = () => {
 
           <ul>
             <li>
-              <a onClick={() => setLogin(true)}>Login/Register</a>
+              <a className="nav-link" onClick={() => setLogin(true)}>Login/Register</a>
               {showLogin && (
                 <Modal onClose={() => setLogin(false)}>
                   <Login />
@@ -85,7 +85,7 @@ const Navbar = () => {
           <ul>
             <li>
               {/* Button to trigger Add Adventure modal */}
-              <a onClick={() => setShowAddAdventureModal(true)}>
+              <a className="nav-link" onClick={() => setShowAddAdventureModal(true)}>
                 New Adventure
               </a>
               {showAddAdventureModal && (
@@ -97,7 +97,7 @@ const Navbar = () => {
               )}
             </li>
             <li>
-              <a href="/logout" onClick={submit}>
+              <a className="nav-link" href="/logout" onClick={submit}>
                 Logout
               </a>
             </li>
