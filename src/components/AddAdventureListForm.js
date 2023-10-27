@@ -12,7 +12,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
 
   const [title, setTitle] = useState(adventure ? adventure.title : "");
 
-  // const [coverPhoto, setCoverPhoto] = useState(adventure ? adventure.coverPhoto : "");
+  const [coverPhoto, setCoverPhoto] = useState(adventure ? adventure.coverPhoto : "");
   
   const [description, setDescription] = useState(adventure ? adventure.description : "");
 
@@ -24,50 +24,79 @@ function AddAdventureListForm({ adventure = null, onClose }) {
 
   const [owner, setOwner] = useState(adventure ? adventure.owner : "");
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   const adventureData = {
+  //     title,
+  //     coverPhoto,
+  //     description,
+  //     location,
+  //     completed,
+  //     tags,
+  //     owner,
+  //   };
+
+  //   const method = isEditMode ? "PUT" : "POST";
+
+  //   const endpoint = isEditMode
+  //     ? `${backendURL}/adventureList/${adventure._id}`
+  //     : `${backendURL}/adventureList`;
+
+  //   try {
+  //     const response = await fetch(endpoint, {
+  //       method: method,
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(adventureData),
+  //     });
+  //     console.log(adventureData)
+  //     if (response.ok) {
+  //       const successMessage = isEditMode
+  //         ? "Adventure updated successfully"
+  //         : "Adventure created successfully";
+
+  //       console.log(successMessage);
+  //       onClose();
+  //       // alert(successMessage);
+  //     } else {
+  //       const errorData = await response.json();
+  //       console.error("Error creating adventure:", errorData);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error creating adventure:", error);
+  //   }
+  // };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    try { 
+      const adventureData = {
+        title,
+        description,
+        location,
+        completed,
+        tags,
+        owner,
+        coverPhoto
+      };
 
-    const adventureData = {
-      title,
-      // coverPhoto,
-      description,
-      location,
-      completed,
-      tags,
-      owner,
-    };
-
-    const method = isEditMode ? "PUT" : "POST";
-
-    const endpoint = isEditMode
-      ? `${backendURL}/adventureList/${adventure._id}`
-      : `${backendURL}/adventureList`;
-
-    try {
-      const response = await fetch(endpoint, {
-        method: method,
+      const response = await fetch(`${backendURL}/adventureList`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(adventureData),
       });
-      console.log(adventureData)
-      if (response.ok) {
-        const successMessage = isEditMode
-          ? "Adventure updated successfully"
-          : "Adventure created successfully";
-
-        console.log(successMessage);
-        onClose();
-        // alert(successMessage);
-      } else {
-        const errorData = await response.json();
-        console.error("Error creating adventure:", errorData);
-      }
+      const data = await response.json();
+      console.log(data);
+      onClose()
     } catch (error) {
-      console.error("Error creating adventure:", error);
+      console.error("There was an error uploading the adventure", error);
     }
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -84,9 +113,9 @@ function AddAdventureListForm({ adventure = null, onClose }) {
         <label>Cover Photo:</label>
         <input
           type="text"
-          value={tags}
+          value={coverPhoto} // used as coverPhoto
           placeholder="Photo URL"
-          onChange={(e) => setTags(e.target.value)}
+          onChange={(e) => setCoverPhoto(e.target.value)}
         />
       </div>
       <div className="form-background">

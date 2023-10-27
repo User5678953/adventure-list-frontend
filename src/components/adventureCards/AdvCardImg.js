@@ -1,12 +1,17 @@
 import React from "react"
 
-const AdvCardImg = ({tags, title}) => {
+const AdvCardImg = ({coverPhoto, tags, title}) => {
     return (
         <img 
-            src={tags}
+            src={coverPhoto}
             className="adventure-card-img"
             alt={title}
         />
+        // <img 
+        //     src={tags}
+        //     className="adventure-card-img"
+        //     alt={title}
+        // />
     )
 }
 
