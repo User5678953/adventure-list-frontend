@@ -60,6 +60,7 @@ const AdventureList = ({ id }) => {
       method: 'delete'
     })
     getAdventure()
+    window.location.reload()
   }
 
   // Handle delete adventure
@@ -68,6 +69,8 @@ const AdventureList = ({ id }) => {
     navigate('/')
   }
 
+
+
   return (
     <>
       <div className="adventure-list">
@@ -75,10 +78,10 @@ const AdventureList = ({ id }) => {
           <>
             <h2>{adventure.title}</h2>
             <p>Description: {adventure.description}</p>
-            <p>Date Created: {adventure.dateCreated}</p>
+            {/* <p>Date Created: {adventure.dateCreated}</p> */}
             <p>Location: {adventure.location}</p>
             <p>Completed: {adventure.completed ? "Yes" : "No"}</p>
-            <p>Tags: {adventure.tags}</p>
+            {/* <p>Tags: {adventure.tags}</p> */}
             <div className="button-container">
               <button
                 className="advent-button advent-button-left"
@@ -101,7 +104,7 @@ const AdventureList = ({ id }) => {
             </div>
           </>
         ) : (
-          <p>Select an Adventure below or add one! Get Adventuring already!</p>
+          <h3>Select an Adventure below or add one! <br/> Get Adventuring already!</h3>
         )}
 
         {/* Conditional rendering of the edit modal with AddAdventureListForm */}

@@ -8,6 +8,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 const cookies = new Cookies();
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const Navbar = () => {
   // State for Add Adventure
   const [showAddAdventureModal, setShowAddAdventureModal] = useState(false);
@@ -31,7 +33,7 @@ const Navbar = () => {
 
     try {
       const response = await axios
-        .delete("http://localhost:3000/register/logout", {
+        .delete(`${backendURL}/register/logout`, {
           username,
           password,
         })
@@ -60,7 +62,7 @@ const Navbar = () => {
 
           <ul>
             <li>
-              <a onClick={() => setLogin(true)}>Login/Register</a>
+              <a className="nav-link" onClick={() => setLogin(true)}>Login/Register</a>
               {showLogin && (
                 <Modal onClose={() => setLogin(false)}>
                   <Login />
@@ -83,7 +85,7 @@ const Navbar = () => {
           <ul>
             <li>
               {/* Button to trigger Add Adventure modal */}
-              <a onClick={() => setShowAddAdventureModal(true)}>
+              <a className="nav-link" onClick={() => setShowAddAdventureModal(true)}>
                 New Adventure
               </a>
               {showAddAdventureModal && (
@@ -95,7 +97,7 @@ const Navbar = () => {
               )}
             </li>
             <li>
-              <a href="/logout" onClick={submit}>
+              <a className="nav-link" href="/logout" onClick={submit}>
                 Logout
               </a>
             </li>
