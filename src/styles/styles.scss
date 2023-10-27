@@ -16,7 +16,7 @@ body {
 //////////////////////////////
 .modalDiv {
     width: 100vw;
-    height: 100vh;
+    height: 130vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -31,12 +31,12 @@ body {
 .modal {
     position: absolute;
     width: 40%;
-    height: 60%;
+    height: 55%;
     background-color: #EAEAEA;
     border-radius: 50px;
     border: 5px solid black;
-    height: 77%;
     overflow: hidden;
+    top: 50px;
 }
 
 .modal input,
@@ -73,10 +73,6 @@ body {
     margin-bottom: 10px;
 }
 
-.site-title {
-    color: white;
-    font-size: 50px;
-}
 
 .navbar ul {
     padding: 0;
@@ -86,9 +82,11 @@ body {
     gap: 1rem;
 }
 
-.navbar a {
+.nav-link {
     color: white;
     text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem;
 }
 
 a {
@@ -119,13 +117,14 @@ a {
     border: 5px solid #EAEAEA;
     border-radius: 50px;
     box-sizing: border-box;
-    padding: 2px;
+    // padding: 2px;
     margin: 0 10px;
 }
 
 .homeContent>div:first-child {
     margin-left: 0;
     border-radius: 50px;
+    max-width: 40vw;
 }
 
 .homeContent>div:last-child {
@@ -139,7 +138,7 @@ a {
     justify-content: space-between;
     height: 100%;
     width: 50%;
-    border-radius: 50px;
+    // border-radius: 50px;
     overflow: hidden;
     background-color: #454444;
 }
@@ -152,6 +151,22 @@ a {
     width: 50%;
     border-radius: 50px;
     background-color: #454444;
+}
+
+.adventure-list h2 {
+    font-size: 2rem;
+}
+
+.adventure-list h3 {
+    font-size: 2rem;
+    color: #EAEAEA;
+    margin: auto;
+}
+
+.adventure-list p {
+    text-align: left;
+    padding-left: 30px;
+    font-size: 1.5rem;
 }
 
 .button-container {
@@ -197,5 +212,26 @@ a {
 
     &:hover {
         background-color: #27AE60;
+    }
+}
+
+.site-title {
+    animation: background-pan 4s linear infinite;
+    margin: 0 ;
+    font-size: 4rem;
+    background: linear-gradient(to right,rgb(52, 211, 153),rgb(110, 231, 183), rgba(255, 255, 255, .9));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
     }
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import { useEffect, useState } from "react";
 import PhotoCardImg from "./PhotoCardImg"
 
 // IMPORT REACT-MULTI-CAROUSEL NPM PACKAGE
@@ -13,11 +14,34 @@ import "../styles/cards.scss"
 // IMPORT TEST DATA
 import advTestData from '../data/TestAdvData'
 
-const PhotosCarousel = () => {
+// Import backend Endpoint
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+// console.log("Backend URL:", backendURL);
+
+const PhotosCarousel = ({ id }) => {
+    const [adventure, setAdventure] = useState('');
+
+    // fetch request
+    useEffect(() => {
+        if (id) {
+            fetch(`${backendURL}/adventureList/${id}`)
+                .then((response) => response.json())
+                .then((data) => setAdventure(data))
+                .catch((error) =>
+                    console.error("Error fetching adventure data:", error)
+                );
+        }
+    }, [id]);
+    console.log(adventure)
+
     return (
-        <div className="photo-carousel">
-            {/* <h1>Photos Carousel Component</h1> */}
-            <Carousel
+        <div className="photo-carousel"><img
+            src={adventure.tags} // tags is used to pull in coverPhoto URL
+            className="photo-card-img"
+            alt={adventure.title}
+        />
+
+            {/* <Carousel
                 additionalTransfrom={0}
                 arrows
                 autoPlaySpeed={3000}
@@ -75,7 +99,7 @@ const PhotosCarousel = () => {
                     return (<PhotoCardImg {...photos} key={i} />)
                 })}
 
-            </Carousel>
+            </Carousel> */}
         </div>
     )
 }

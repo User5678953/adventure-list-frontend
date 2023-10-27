@@ -29,7 +29,7 @@ const Home = () => {
               <>
                 <div className="homeContent">
                   <AdventureList id={selectedAdventureId} />
-                  <PhotosCarousel />
+                  <PhotosCarousel id={selectedAdventureId} />
                 </div>
 
                 <AdventureCarousel

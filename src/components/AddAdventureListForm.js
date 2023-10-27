@@ -11,23 +11,21 @@ function AddAdventureListForm({ adventure = null, onClose }) {
   const isEditMode = adventure !== null;
 
   const [title, setTitle] = useState(adventure ? adventure.title : "");
-  
-  const [description, setDescription] = useState(
-    adventure ? adventure.description : ""
-  );
+
+  // const [coverPhoto, setCoverPhoto] = useState(adventure ? adventure.coverPhoto : "");
+
+  const [description, setDescription] = useState(adventure ? adventure.description : "");
 
   const [location, setLocation] = useState(adventure ? adventure.location : "");
 
-  const [completed, setCompleted] = useState(
-    adventure ? adventure.completed : false
-  );
+  const [completed, setCompleted] = useState(adventure ? adventure.completed : false);
 
-  const [tags, setTags] = useState(adventure ? adventure.tags : "");
+  const [tags, setTags] = useState(adventure ? adventure.tags : ""); // used with coverPhoto URL
 
   const [owner, setOwner] = useState(adventure ? adventure.owner : "");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     const adventureData = {
       title,
@@ -36,6 +34,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
       completed,
       tags,
       owner,
+      // coverPhoto
     };
 
     const method = isEditMode ? "PUT" : "POST";
@@ -52,13 +51,15 @@ function AddAdventureListForm({ adventure = null, onClose }) {
         },
         body: JSON.stringify(adventureData),
       });
-
+      console.log(adventureData)
       if (response.ok) {
         const successMessage = isEditMode
           ? "Adventure updated successfully"
           : "Adventure created successfully";
 
         console.log(successMessage);
+
+        window.location.reload()
         onClose();
         // alert(successMessage);
       } else {
@@ -70,6 +71,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
     }
   };
 
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-background">
@@ -79,6 +81,15 @@ function AddAdventureListForm({ adventure = null, onClose }) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+        />
+      </div>
+      <div className="form-background">
+        <label>Cover Photo:</label>
+        <input
+          type="text"
+          value={tags} // used as coverPhoto
+          placeholder="Photo URL"
+          onChange={(e) => setTags(e.target.value)}
         />
       </div>
       <div className="form-background">
@@ -98,14 +109,14 @@ function AddAdventureListForm({ adventure = null, onClose }) {
           required
         />
       </div>
-      <div className="form-background">
+      {/* <div className="form-background">
         <label>Tags:</label>
         <input
           type="text"
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
-      </div>
+      </div> */}
       <div className="form-background checkbox-container">
         <label>Completed:</label>
         <input
@@ -114,14 +125,14 @@ function AddAdventureListForm({ adventure = null, onClose }) {
           onChange={(e) => setCompleted(e.target.checked)}
         />
       </div>
-      <div className="form-background">
+      {/* <div className="form-background">
         <label>Owner:</label>
         <input
           type="text"
           value={owner}
           onChange={(e) => setOwner(e.target.value)}
         />
-      </div>
+      </div> */}
       <button type="submit" className="submit">
         {isEditMode ? "Update Adventure" : "Add Adventure"}
       </button>
