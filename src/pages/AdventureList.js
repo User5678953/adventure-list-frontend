@@ -75,7 +75,7 @@ const AdventureList = ({ id }) => {
           <>
             <h2>{adventure.title}</h2>
             <p>Description: {adventure.description}</p>
-            <p>Date Created: {adventure.dateCreated}</p>
+            {/* <p>Date Created: {adventure.dateCreated}</p> */}
             <p>Location: {adventure.location}</p>
             <p>Completed: {adventure.completed ? "Yes" : "No"}</p>
             {/* <p>Tags: {adventure.tags}</p> */}

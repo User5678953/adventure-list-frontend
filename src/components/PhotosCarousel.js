@@ -36,7 +36,7 @@ const PhotosCarousel = ({ id }) => {
 
     return (
         <div className="photo-carousel"><img
-            src={adventure.coverPhoto}
+            src={adventure.tags} // tags is used to pull in coverPhoto URL
             className="photo-card-img"
             alt={adventure.title}
         />

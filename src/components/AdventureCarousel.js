@@ -94,8 +94,7 @@ const AdventureCarousel = ({ selectAdventure }) => {
               return (
                 <AdvCard
                   description={advent.description}
-                  coverPhoto={advent.coverPhoto}
-                  tags={advent.tags}
+                  coverPhoto={advent.tags} // tags is being used to pull in coverPhoto URL
                   id={advent._id}
                   location={advent.location}
                   owner={advent.owner}

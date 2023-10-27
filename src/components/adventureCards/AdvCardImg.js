@@ -1,6 +1,6 @@
 import React from "react"
 
-const AdvCardImg = ({coverPhoto, tags, title}) => {
+const AdvCardImg = ({coverPhoto, title}) => {
     return (
         <img 
             src={coverPhoto}

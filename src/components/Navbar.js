@@ -8,6 +8,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 const cookies = new Cookies();
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const Navbar = () => {
   // State for Add Adventure
   const [showAddAdventureModal, setShowAddAdventureModal] = useState(false);
@@ -31,7 +33,7 @@ const Navbar = () => {
 
     try {
       const response = await axios
-        .delete("http://localhost:3000/register/logout", {
+        .delete(`${backendURL}/register/logout`, {
           username,
           password,
         })
