@@ -11,16 +11,14 @@ function AddAdventureListForm({ adventure = null, onClose }) {
   const isEditMode = adventure !== null;
 
   const [title, setTitle] = useState(adventure ? adventure.title : "");
+
+  // const [coverPhoto, setCoverPhoto] = useState(adventure ? adventure.coverPhoto : "");
   
-  const [description, setDescription] = useState(
-    adventure ? adventure.description : ""
-  );
+  const [description, setDescription] = useState(adventure ? adventure.description : "");
 
   const [location, setLocation] = useState(adventure ? adventure.location : "");
 
-  const [completed, setCompleted] = useState(
-    adventure ? adventure.completed : false
-  );
+  const [completed, setCompleted] = useState(adventure ? adventure.completed : false);
 
   const [tags, setTags] = useState(adventure ? adventure.tags : "");
 
@@ -31,6 +29,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
 
     const adventureData = {
       title,
+      // coverPhoto,
       description,
       location,
       completed,
@@ -52,7 +51,7 @@ function AddAdventureListForm({ adventure = null, onClose }) {
         },
         body: JSON.stringify(adventureData),
       });
-
+      console.log(adventureData)
       if (response.ok) {
         const successMessage = isEditMode
           ? "Adventure updated successfully"
@@ -82,6 +81,15 @@ function AddAdventureListForm({ adventure = null, onClose }) {
         />
       </div>
       <div className="form-background">
+        <label>Cover Photo:</label>
+        <input
+          type="text"
+          value={tags}
+          placeholder="Photo URL"
+          onChange={(e) => setTags(e.target.value)}
+        />
+      </div>
+      <div className="form-background">
         <label>Description:</label>
         <textarea
           value={description}
@@ -98,14 +106,14 @@ function AddAdventureListForm({ adventure = null, onClose }) {
           required
         />
       </div>
-      <div className="form-background">
+      {/* <div className="form-background">
         <label>Tags:</label>
         <input
           type="text"
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
-      </div>
+      </div> */}
       <div className="form-background checkbox-container">
         <label>Completed:</label>
         <input
@@ -114,14 +122,14 @@ function AddAdventureListForm({ adventure = null, onClose }) {
           onChange={(e) => setCompleted(e.target.checked)}
         />
       </div>
-      <div className="form-background">
+      {/* <div className="form-background">
         <label>Owner:</label>
         <input
           type="text"
           value={owner}
           onChange={(e) => setOwner(e.target.value)}
         />
-      </div>
+      </div> */}
       <button type="submit" className="submit">
         {isEditMode ? "Update Adventure" : "Add Adventure"}
       </button>

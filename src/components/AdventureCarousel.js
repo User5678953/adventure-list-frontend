@@ -94,6 +94,7 @@ const AdventureCarousel = ({ selectAdventure }) => {
               return (
                 <AdvCard
                   description={advent.description}
+                  tags={advent.tags}
                   id={advent._id}
                   location={advent.location}
                   owner={advent.owner}

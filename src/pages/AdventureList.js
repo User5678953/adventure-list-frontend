@@ -78,7 +78,7 @@ const AdventureList = ({ id }) => {
             <p>Date Created: {adventure.dateCreated}</p>
             <p>Location: {adventure.location}</p>
             <p>Completed: {adventure.completed ? "Yes" : "No"}</p>
-            <p>Tags: {adventure.tags}</p>
+            {/* <p>Tags: {adventure.tags}</p> */}
             <div className="button-container">
               <button
                 className="advent-button advent-button-left"
